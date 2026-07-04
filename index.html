@@ -2072,7 +2072,7 @@ async function submitForm(event) {
 
   // Check if access key is still the placeholder
   var accessKey = formData.get('access_key');
-  if (!accessKey || accessKey === 'cdd0a487-9eb4-4a9c-840d-0d2205e74a80') {
+  if (!accessKey || accessKey === 'YOUR_WEB3FORMS_ACCESS_KEY') {
     // Demo mode — no real key set yet. Show success so the flow is testable.
     setTimeout(function() {
       document.getElementById('form-content').style.display = 'none';
