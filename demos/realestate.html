@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Meridian Estates — Luxury Property in Dubai (Concept Design by Astha Ventures)</title>
+<meta name="description" content="Concept website for Meridian Estates, a fictional luxury real-estate brokerage in Dubai. Designed and built by Astha Ventures as a demonstration.">
+<meta name="theme-color" content="#121214">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23121214'/%3E%3Cpath d='M16 46V20l16 16 16-16v26' fill='none' stroke='%23C8A97E' stroke-width='4'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0F0F11;
+  --charcoal:#141416;
+  --char2:#1C1C1F;
+  --char3:#26262A;
+  --line-dark:rgba(232,216,190,.14);
+  --sand:#C8A97E;
+  --sand-deep:#A8865A;
+  --champagne:#E7D6B8;
+  --paper:#F7F3EC;
+  --paper2:#EFE8DC;
+  --stone:#8B8378;
+  --text:#1A1918;
+  --text-soft:#5F5950;
+  --line:rgba(26,25,24,.12);
+  --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --sans:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --wrap:1280px;
+  --gutter:clamp(20px,4vw,56px);
+  --astha-navy:#0D1B3D;
+  --astha-gold:#C9A227;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-variant-numeric:lining-nums;font-family:var(--sans);color:var(--text);background:var(--paper);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+::selection{background:var(--sand);color:var(--ink)}
+.wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+:focus-visible{outline:2px solid var(--sand);outline-offset:3px}
+section[id]{scroll-margin-top:110px}
+
+/* ---------- Astha concept banner ---------- */
+.concept-bar{background:var(--astha-navy);color:#E9ECF5;font-size:12.5px;letter-spacing:.02em;border-bottom:1px solid rgba(201,162,39,.35)}
+.concept-bar .wrap{display:flex;align-items:center;justify-content:center;gap:10px 18px;flex-wrap:wrap;min-height:36px;padding-top:6px;padding-bottom:6px;text-align:center}
+.concept-bar .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--astha-gold);margin-right:8px;vertical-align:middle;box-shadow:0 0 0 3px rgba(201,162,39,.18)}
+.concept-bar strong{color:#fff;font-weight:600}
+.concept-bar a{color:var(--astha-gold);font-weight:600;white-space:nowrap;border-bottom:1px solid transparent;transition:border-color .3s}
+.concept-bar a:hover{border-color:var(--astha-gold)}
+
+/* ---------- Header / nav ---------- */
+.site-header{position:sticky;top:0;z-index:50}
+.nav{background:rgba(20,20,22,.86);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);border-bottom:1px solid var(--line-dark);transition:background .4s var(--ease),box-shadow .4s}
+.site-header.scrolled .nav{background:rgba(15,15,17,.95);box-shadow:0 10px 30px -18px rgba(0,0,0,.6)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:74px;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;color:var(--paper)}
+.brand-mark{width:34px;height:34px;flex:none}
+.brand-name{font-family:var(--serif);font-size:25px;font-weight:500;letter-spacing:.14em;line-height:1;text-transform:uppercase}
+.brand-name small{display:block;font-family:var(--sans);font-size:9px;letter-spacing:.42em;color:var(--sand);margin-top:5px;font-weight:600}
+.nav-links{display:flex;align-items:center;gap:34px;list-style:none;margin:0;padding:0}
+.nav-links a{color:rgba(247,243,236,.78);font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;position:relative;padding:6px 0;transition:color .3s}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--sand);transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease)}
+.nav-links a:hover{color:var(--paper)}
+.nav-links a:hover::after{transform:scaleX(1);transform-origin:left}
+.nav-cta{display:flex;align-items:center;gap:18px}
+.nav-phone{color:rgba(247,243,236,.7);font-size:13px;letter-spacing:.04em}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;padding:15px 26px;border-radius:0;border:1px solid transparent;cursor:pointer;transition:background .35s var(--ease),color .35s var(--ease),border-color .35s,transform .35s var(--ease);white-space:nowrap}
+.btn svg{width:16px;height:16px;transition:transform .35s var(--ease)}
+.btn:hover svg{transform:translateX(4px)}
+.btn-sand{background:var(--sand);color:var(--ink)}
+.btn-sand:hover{background:var(--champagne)}
+.btn-ghost{border-color:rgba(231,214,184,.45);color:var(--paper)}
+.btn-ghost:hover{border-color:var(--sand);background:rgba(200,169,126,.1)}
+.btn-dark{background:var(--ink);color:var(--paper)}
+.btn-dark:hover{background:var(--char3)}
+.btn-outline-dark{border-color:rgba(15,15,17,.35);color:var(--ink)}
+.btn-outline-dark:hover{border-color:var(--ink);background:rgba(15,15,17,.05)}
+.nav .btn{padding:12px 20px}
+.burger{display:none;width:46px;height:46px;border:1px solid var(--line-dark);background:transparent;cursor:pointer;position:relative;flex:none}
+.burger span{position:absolute;left:12px;right:12px;height:1.5px;background:var(--paper);transition:transform .4s var(--ease),opacity .3s,top .4s var(--ease)}
+.burger span:nth-child(1){top:16px}
+.burger span:nth-child(2){top:22px}
+.burger span:nth-child(3){top:28px}
+.burger[aria-expanded="true"] span:nth-child(1){top:22px;transform:rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){top:22px;transform:rotate(-45deg)}
+.mobile-menu{display:none}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;background:var(--charcoal);color:var(--paper);overflow:hidden;isolation:isolate}
+.hero-art{position:absolute;inset:0;z-index:-2}
+.hero-art svg{width:100%;height:100%}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(15,15,17,.92) 0%,rgba(15,15,17,.72) 38%,rgba(15,15,17,.08) 70%,rgba(15,15,17,0) 100%),linear-gradient(0deg,rgba(15,15,17,.9) 0%,rgba(15,15,17,0) 34%)}
+.hero-inner{min-height:min(860px,calc(100vh - 110px));display:flex;flex-direction:column;justify-content:flex-end;padding-top:clamp(70px,10vw,140px);padding-bottom:56px}
+.eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:11.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--sand);font-weight:600}
+.eyebrow::before{content:"";width:38px;height:1px;background:currentColor}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(46px,7.4vw,112px);line-height:.98;letter-spacing:-.015em;margin:26px 0 26px;max-width:11.5em}
+.hero h1 em{font-style:italic;color:var(--champagne)}
+.hero-lede{max-width:520px;color:rgba(247,243,236,.74);font-size:17px;font-weight:300;margin:0 0 44px}
+.hero-feature{position:absolute;right:var(--gutter);top:clamp(60px,9vw,120px);width:280px;background:rgba(20,20,22,.55);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(231,214,184,.2);padding:22px 22px 20px}
+.hero-feature .lbl{font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--sand);font-weight:600}
+.hero-feature h3{font-family:var(--serif);font-weight:500;font-size:26px;margin:8px 0 2px;line-height:1.1}
+.hero-feature p{margin:0;color:rgba(247,243,236,.65);font-size:13px}
+.hero-feature .row{display:flex;justify-content:space-between;align-items:flex-end;margin-top:16px;padding-top:14px;border-top:1px solid rgba(231,214,184,.18)}
+.hero-feature .price{font-family:var(--serif);font-size:22px;color:var(--champagne)}
+.hero-feature a{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--paper);border-bottom:1px solid var(--sand);padding-bottom:2px}
+
+/* search bar */
+.search{display:grid;grid-template-columns:1.2fr 1fr 1fr auto;background:rgba(247,243,236,.97);color:var(--text);max-width:980px;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.field{position:relative;padding:16px 26px 16px;border-right:1px solid var(--line);min-width:0}
+.field label{display:block;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--stone);font-weight:600;margin-bottom:3px}
+.field select{width:100%;appearance:none;-webkit-appearance:none;border:0;background:transparent;font-size:15.5px;font-weight:500;padding:2px 22px 2px 0;cursor:pointer;color:var(--text);text-overflow:ellipsis}
+.field select:focus{outline:none}
+.field:focus-within{background:#fff}
+.field::after{content:"";position:absolute;right:26px;bottom:24px;width:7px;height:7px;border-right:1.5px solid var(--sand-deep);border-bottom:1.5px solid var(--sand-deep);transform:rotate(45deg);pointer-events:none}
+.search .btn{height:100%;padding:0 34px}
+.search-note{margin:14px 0 0;font-size:12.5px;color:rgba(247,243,236,.55);min-height:1.4em}
+.hero-meta{display:flex;flex-wrap:wrap;gap:12px 34px;margin-top:40px;padding-top:26px;border-top:1px solid var(--line-dark);font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(247,243,236,.6)}
+.hero-meta span{display:inline-flex;align-items:center;gap:10px}
+.hero-meta span::before{content:"";width:5px;height:5px;background:var(--sand);transform:rotate(45deg)}
+
+/* ---------- Section commons ---------- */
+.section{padding:clamp(80px,11vw,150px) 0}
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px 60px;margin-bottom:clamp(40px,5vw,64px);flex-wrap:wrap}
+.section-title{font-family:var(--serif);font-weight:400;font-size:clamp(38px,5vw,68px);line-height:1.02;letter-spacing:-.01em;margin:18px 0 0;max-width:13em}
+.section-title em{font-style:italic;color:var(--sand-deep)}
+.section-intro{max-width:420px;color:var(--text-soft);margin:0;font-size:16px}
+.dark{background:var(--charcoal);color:var(--paper)}
+.dark .section-title em{color:var(--champagne)}
+.dark .section-intro{color:rgba(247,243,236,.66)}
+
+/* ---------- Properties ---------- */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:34px}
+.chip{border:1px solid var(--line);background:transparent;padding:10px 18px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--text-soft);cursor:pointer;transition:all .3s var(--ease)}
+.chip:hover{border-color:var(--text);color:var(--text)}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(22px,2.6vw,38px)}
+.card{position:relative;background:#fff;transition:transform .6s var(--ease),box-shadow .6s var(--ease)}
+.card:hover{transform:translateY(-6px);box-shadow:0 34px 60px -38px rgba(30,24,16,.45)}
+.card.is-hidden{display:none}
+.card-media{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--char2)}
+.card-media svg{width:100%;height:100%;transition:transform 1.2s var(--ease)}
+.card:hover .card-media svg{transform:scale(1.06)}
+.card-media::after{content:"";position:absolute;inset:14px;border:1px solid rgba(255,255,255,.0);transition:border-color .6s var(--ease),inset .6s var(--ease);pointer-events:none}
+.card:hover .card-media::after{border-color:rgba(255,255,255,.45);inset:12px}
+.tag{position:absolute;left:18px;top:18px;background:rgba(247,243,236,.94);color:var(--ink);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;padding:7px 11px;z-index:2}
+.tag.tag-dark{background:var(--ink);color:var(--champagne)}
+.fav{position:absolute;right:16px;top:14px;z-index:2;width:40px;height:40px;border-radius:50%;border:0;background:rgba(15,15,17,.42);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:grid;place-items:center;cursor:pointer;transition:background .3s}
+.fav svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:1.6;transition:fill .3s,transform .3s var(--ease)}
+.fav:hover{background:rgba(15,15,17,.7)}
+.fav[aria-pressed="true"] svg{fill:var(--sand);stroke:var(--sand);transform:scale(1.1)}
+.card-body{padding:24px 26px 26px}
+.card-area{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--sand-deep);font-weight:700}
+.card h3{font-family:var(--serif);font-weight:500;font-size:29px;line-height:1.1;margin:8px 0 14px}
+.card h3 a{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .5s var(--ease)}
+.card:hover h3 a{background-size:100% 1px}
+.price{font-family:var(--serif);font-size:24px;font-weight:500;color:var(--ink)}
+.price small{font-family:var(--sans);font-size:11px;letter-spacing:.18em;color:var(--stone);font-weight:600;margin-right:6px}
+.specs{display:flex;flex-wrap:wrap;gap:6px 20px;margin-top:18px;padding-top:18px;border-top:1px solid var(--line);font-size:13px;color:var(--text-soft)}
+.specs span{display:inline-flex;align-items:center;gap:7px}
+.specs svg{width:17px;height:17px;stroke:var(--sand-deep);fill:none;stroke-width:1.4}
+.props-foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:56px;padding-top:30px;border-top:1px solid var(--line);color:var(--text-soft);font-size:14px}
+
+/* ---------- Why Dubai ---------- */
+.why{position:relative;overflow:hidden}
+.why-bg{position:absolute;right:-120px;top:-40px;width:680px;opacity:.5;pointer-events:none}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark);position:relative}
+.stat{padding:44px 34px 40px 0;border-right:1px solid var(--line-dark)}
+.stat + .stat{padding-left:34px}
+.stat:last-child{border-right:0}
+.stat-num{font-family:var(--serif);font-size:clamp(54px,6vw,86px);line-height:1;color:var(--champagne);font-weight:400;letter-spacing:-.02em}
+.stat-num sup{font-size:.36em;vertical-align:top;margin-left:4px;color:var(--sand);position:relative;top:.3em}
+.stat h3{font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;margin:20px 0 10px;color:var(--paper)}
+.stat p{margin:0;font-size:14.5px;color:rgba(247,243,236,.62);line-height:1.6}
+.why-note{margin-top:26px;font-size:12px;color:rgba(247,243,236,.42);max-width:720px}
+.pillars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;margin-top:80px}
+.pillar{display:flex;gap:20px}
+.pillar-ic{flex:none;width:52px;height:52px;border:1px solid rgba(200,169,126,.4);display:grid;place-items:center}
+.pillar-ic svg{width:24px;height:24px;stroke:var(--sand);fill:none;stroke-width:1.3}
+.pillar h4{font-family:var(--serif);font-size:24px;font-weight:500;margin:0 0 6px;line-height:1.15}
+.pillar p{margin:0;color:rgba(247,243,236,.6);font-size:14.5px}
+
+/* ---------- Neighbourhoods ---------- */
+.hoods{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.hood{position:relative;background:var(--charcoal);color:var(--paper);overflow:hidden;min-height:520px;display:flex;flex-direction:column;justify-content:flex-end;isolation:isolate;cursor:default}
+.hood-art{position:absolute;inset:0;z-index:-1}
+.hood-art svg{width:100%;height:100%;transition:transform 1.4s var(--ease),opacity .6s}
+.hood:hover .hood-art svg{transform:scale(1.05)}
+.hood::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(15,15,17,.96) 8%,rgba(15,15,17,.5) 48%,rgba(15,15,17,0) 75%)}
+.hood-num{position:absolute;top:22px;left:24px;font-family:var(--serif);font-style:italic;font-size:20px;color:var(--sand)}
+.hood-body{padding:28px 26px 28px}
+.hood h3{font-family:var(--serif);font-weight:400;font-size:34px;line-height:1.02;margin:0 0 10px}
+.hood p{margin:0;font-size:14px;color:rgba(247,243,236,.66);line-height:1.6}
+.hood-more{display:grid;grid-template-rows:0fr;transition:grid-template-rows .6s var(--ease)}
+.hood-more > div{overflow:hidden}
+.hood:hover .hood-more,.hood:focus-within .hood-more{grid-template-rows:1fr}
+.hood dl{margin:18px 0 0;padding-top:16px;border-top:1px solid var(--line-dark);display:grid;grid-template-columns:auto 1fr;gap:8px 16px;font-size:12.5px}
+.hood dt{color:var(--sand);letter-spacing:.14em;text-transform:uppercase;font-weight:600;font-size:10.5px;padding-top:2px}
+.hood dd{margin:0;color:rgba(247,243,236,.82)}
+.hood-link{display:inline-flex;align-items:center;gap:8px;margin-top:20px;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--champagne)}
+.hood-link svg{width:14px;height:14px;transition:transform .35s var(--ease)}
+.hood-link:hover svg{transform:translateX(4px)}
+
+/* ---------- Approach ---------- */
+.approach{background:var(--paper2)}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid var(--line)}
+.step{padding:40px 40px 10px 0}
+.step + .step{padding-left:40px;border-left:1px solid var(--line)}
+.step-n{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--sand-deep)}
+.step h3{font-family:var(--serif);font-weight:500;font-size:32px;margin:12px 0 10px;line-height:1.1}
+.step p{margin:0;color:var(--text-soft);font-size:15px}
+
+/* ---------- Advisor CTA ---------- */
+.advisor{position:relative;background:linear-gradient(120deg,#1A1814 0%,#26211A 55%,#3A3024 100%);color:var(--paper);overflow:hidden}
+.advisor .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;padding-top:clamp(70px,9vw,120px);padding-bottom:clamp(70px,9vw,120px)}
+.advisor h2{font-family:var(--serif);font-weight:400;font-size:clamp(40px,5.2vw,72px);line-height:1;margin:20px 0 22px}
+.advisor h2 em{color:var(--champagne)}
+.advisor p{color:rgba(247,243,236,.7);max-width:480px;margin:0 0 36px;font-size:16.5px;font-weight:300}
+.advisor-actions{display:flex;flex-wrap:wrap;gap:14px}
+.advisor-art{position:relative;aspect-ratio:1/1;max-width:500px;justify-self:end;width:100%}
+.advisor-art svg{width:100%;height:100%}
+.advisor-badges{display:flex;gap:28px;flex-wrap:wrap;margin-top:44px;padding-top:26px;border-top:1px solid var(--line-dark)}
+.advisor-badges div{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(247,243,236,.55)}
+.advisor-badges strong{display:block;font-family:var(--serif);font-size:24px;letter-spacing:0;text-transform:none;color:var(--champagne);font-weight:500;margin-bottom:2px}
+
+/* ---------- Enquiry ---------- */
+.enquire .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(40px,7vw,110px)}
+.contact-list{list-style:none;margin:40px 0 0;padding:0;border-top:1px solid var(--line)}
+.contact-list li{display:flex;gap:18px;padding:20px 0;border-bottom:1px solid var(--line);align-items:flex-start}
+.contact-list svg{width:20px;height:20px;stroke:var(--sand-deep);fill:none;stroke-width:1.4;flex:none;margin-top:3px}
+.contact-list span{display:block;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--stone);font-weight:600}
+.contact-list a,.contact-list div{font-size:15.5px}
+.contact-list a:hover{color:var(--sand-deep)}
+.form{background:#fff;padding:clamp(28px,4vw,56px);box-shadow:0 40px 80px -60px rgba(30,24,16,.5)}
+.form h3{font-family:var(--serif);font-weight:500;font-size:34px;margin:0 0 6px;line-height:1.1}
+.form > p{margin:0 0 30px;color:var(--text-soft);font-size:14.5px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px 26px}
+.form-grid .full{grid-column:1/-1}
+.f label{display:block;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--stone);font-weight:600;margin-bottom:8px}
+.f input,.f select,.f textarea{width:100%;border:0;border-bottom:1px solid rgba(26,25,24,.22);background:transparent;padding:10px 0 12px;font-size:15.5px;border-radius:0;transition:border-color .3s;appearance:none;-webkit-appearance:none}
+.f select{background-image:linear-gradient(45deg,transparent 50%,var(--sand-deep) 50%),linear-gradient(135deg,var(--sand-deep) 50%,transparent 50%);background-position:calc(100% - 10px) 52%,calc(100% - 5px) 52%;background-size:5px 5px,5px 5px;background-repeat:no-repeat;padding-right:24px;cursor:pointer}
+.f textarea{resize:vertical;min-height:96px}
+.f input:focus,.f select:focus,.f textarea:focus{outline:none;border-color:var(--ink)}
+.f input::placeholder,.f textarea::placeholder{color:#B2AA9E}
+.pref{display:flex;flex-wrap:wrap;gap:8px;position:relative}
+.pref input{position:absolute;left:0;top:0;width:1px;height:1px;margin:0;opacity:0;pointer-events:none}
+.pref label{margin:0;border:1px solid var(--line);padding:9px 15px;font-size:12px;letter-spacing:.1em;text-transform:none;color:var(--text-soft);cursor:pointer;transition:all .25s;font-weight:500}
+.pref input:checked + label{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.pref input:focus-visible + label{outline:2px solid var(--sand);outline-offset:2px}
+.consent{display:flex;gap:12px;align-items:flex-start;font-size:13px;color:var(--text-soft)}
+.consent input{margin-top:3px;accent-color:var(--ink);width:16px;height:16px;flex:none}
+.form-actions{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:30px}
+.form-msg{display:none;margin-top:24px;padding:18px 20px;border-left:3px solid var(--sand);background:var(--paper);font-size:14.5px;color:var(--text)}
+.form-msg.show{display:flex;gap:14px;align-items:flex-start;animation:fadeUp .6s var(--ease)}
+.form-msg svg{width:22px;height:22px;flex:none;stroke:var(--sand-deep);fill:none;stroke-width:1.5}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* ---------- Footer ---------- */
+.footer{background:var(--ink);color:rgba(247,243,236,.66);padding:90px 0 36px;font-size:14px}
+.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:60px;border-bottom:1px solid var(--line-dark)}
+.footer h4{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--sand);margin:0 0 20px;font-weight:600}
+.footer ul{list-style:none;margin:0;padding:0;display:grid;gap:11px}
+.footer a:hover{color:var(--paper)}
+.footer-about p{max-width:330px;margin:22px 0 26px}
+.social{display:flex;gap:10px}
+.social a{width:40px;height:40px;border:1px solid var(--line-dark);display:grid;place-items:center;transition:border-color .3s,background .3s}
+.social a:hover{border-color:var(--sand);background:rgba(200,169,126,.08)}
+.social svg{width:16px;height:16px;stroke:var(--champagne);fill:none;stroke-width:1.5}
+.footer-big{font-family:var(--serif);font-size:clamp(56px,13vw,200px);line-height:.9;letter-spacing:.06em;color:transparent;-webkit-text-stroke:1px rgba(200,169,126,.28);text-align:center;margin:56px 0 40px;user-select:none;white-space:nowrap;overflow:hidden}
+.footer-bottom{display:flex;justify-content:space-between;gap:16px 30px;flex-wrap:wrap;font-size:12.5px;color:rgba(247,243,236,.45)}
+.footer-bottom a{color:var(--astha-gold)}
+.disclaimer{margin-top:22px;font-size:11.5px;color:rgba(247,243,236,.36);line-height:1.6;max-width:900px}
+
+/* ---------- Reveal ---------- */
+.js .reveal{opacity:0;transform:translateY(28px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.js .reveal.in{opacity:1;transform:none}
+.js .reveal.d1{transition-delay:.08s}.js .reveal.d2{transition-delay:.16s}.js .reveal.d3{transition-delay:.24s}.js .reveal.d4{transition-delay:.32s}.js .reveal.d5{transition-delay:.4s}
+.hero .rise{animation:rise 1.2s var(--ease) both}
+.hero .rise.r2{animation-delay:.12s}.hero .rise.r3{animation-delay:.24s}.hero .rise.r4{animation-delay:.36s}.hero .rise.r5{animation-delay:.5s}
+@keyframes rise{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+.sun-glow{animation:glow 7s ease-in-out infinite alternate}
+@keyframes glow{from{opacity:.75}to{opacity:1}}
+.shimmer line{animation:shim 6s ease-in-out infinite alternate}
+@keyframes shim{from{opacity:.15}to{opacity:.45}}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1180px){
+  .nav-phone{display:none}
+  .nav-links{gap:24px}
+  .hero-feature{display:none}
+}
+@media (max-width:1020px){
+  .nav-links,.nav-cta .btn{display:none}
+  .burger{display:block}
+  .mobile-menu{display:block;position:absolute;left:0;right:0;top:100%;background:rgba(15,15,17,.98);border-bottom:1px solid var(--line-dark);max-height:0;overflow:hidden;transition:max-height .5s var(--ease);visibility:hidden}
+  .mobile-menu.open{max-height:80vh;visibility:visible}
+  .mobile-menu ul{list-style:none;margin:0;padding:12px var(--gutter) 28px}
+  .mobile-menu li a{display:block;padding:16px 0;border-bottom:1px solid var(--line-dark);font-family:var(--serif);font-size:28px;color:var(--paper)}
+  .mobile-menu .btn{margin-top:24px;width:100%}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stat:nth-child(2){border-right:0}
+  .stat:nth-child(3){padding-left:0;border-top:1px solid var(--line-dark)}
+  .stat:nth-child(4){border-top:1px solid var(--line-dark)}
+  .pillars{grid-template-columns:1fr;gap:28px;margin-top:56px}
+  .hoods{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hood{min-height:460px}
+  .advisor .wrap{grid-template-columns:1fr}
+  .advisor-art{max-width:380px;justify-self:start;order:-1}
+  .enquire .wrap{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr 1fr}
+  .footer-about{grid-column:1/-1}
+  .search{grid-template-columns:1fr 1fr}
+  .field:nth-child(2){border-right:0}
+  .field:nth-child(3){border-top:1px solid var(--line)}
+  .search .btn{padding:20px 26px;border-top:1px solid var(--line)}
+}
+@media (max-width:700px){
+  .concept-bar{font-size:11.5px}
+  .concept-bar .wrap{gap:2px 10px;line-height:1.45}
+  .nav .wrap{height:66px}
+  .brand-name{font-size:21px}
+  .hero::before{background:linear-gradient(180deg,rgba(15,15,17,.05) 0px,rgba(15,15,17,.35) 240px,rgba(15,15,17,.78) 420px,#141416 560px)}
+  .hero-inner{min-height:0;padding-top:250px;padding-bottom:44px}
+  .hero-art{inset:0 0 auto auto;height:560px;width:auto}
+  .hero-art svg{width:auto;height:560px;max-width:none}
+  .hero-lede{font-size:16px;margin-bottom:32px}
+  .search{grid-template-columns:1fr}
+  .field{border-right:0;border-bottom:1px solid var(--line)}
+  .field:nth-child(3){border-top:0}
+  .search .btn{border-top:0}
+  .hero-meta{gap:10px 22px;font-size:11px}
+  .grid{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr}
+  .stat,.stat + .stat{padding:34px 0;border-right:0;border-top:1px solid var(--line-dark)}
+  .stat:first-child{border-top:0}
+  .hoods{grid-template-columns:1fr}
+  .hood{min-height:460px}
+  .hood::after{background:linear-gradient(0deg,rgba(15,15,17,.97) 30%,rgba(15,15,17,.7) 62%,rgba(15,15,17,.15) 100%)}
+  .hood-more{grid-template-rows:1fr}
+  .steps{grid-template-columns:1fr}
+  .step,.step + .step{padding:32px 0;border-left:0;border-top:1px solid var(--line)}
+  .step:first-child{border-top:0}
+  .form-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr}
+  .card h3{font-size:27px}
+  .section-head{margin-bottom:34px}
+}
+@media (hover:none){.hood-more{grid-template-rows:1fr}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;transition-delay:0s!important}
+  .js .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header" id="top">
+  <div class="concept-bar" role="note" aria-label="Concept design notice">
+    <div class="wrap">
+      <span><span class="dot" aria-hidden="true"></span>Concept design by <strong>Astha Ventures</strong> · Fictional brand for demonstration</span>
+      <a href="https://asthaventures.in/#global" target="_top">Build yours →</a>
+    </div>
+  </div>
+  <nav class="nav" aria-label="Main">
+    <div class="wrap">
+      <a href="#top" class="brand" aria-label="Meridian Estates home">
+        <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><rect x=".75" y=".75" width="38.5" height="38.5" fill="none" stroke="#C8A97E" stroke-width="1.2"/><path d="M9 31V11l11 11 11-11v20" fill="none" stroke="#E7D6B8" stroke-width="1.6"/><path d="M20 22v9" stroke="#C8A97E" stroke-width="1.2"/></svg>
+        <span class="brand-name">Meridian<small>Estates · Dubai</small></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#properties">Properties</a></li>
+        <li><a href="#why-dubai">Why Dubai</a></li>
+        <li><a href="#neighbourhoods">Neighbourhoods</a></li>
+        <li><a href="#approach">Approach</a></li>
+        <li><a href="#enquire">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a class="nav-phone" href="tel:+97140000000">+971 4 000 0000</a>
+        <a class="btn btn-sand" href="#enquire">Book a viewing</a>
+        <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="#properties">Properties</a></li>
+      <li><a href="#why-dubai">Why Dubai</a></li>
+      <li><a href="#neighbourhoods">Neighbourhoods</a></li>
+      <li><a href="#approach">Approach</a></li>
+      <li><a href="#enquire">Contact</a></li>
+      <li style="border:0"><a class="btn btn-sand" href="#enquire" style="font-family:var(--sans);font-size:12.5px;color:var(--ink);border:0">Book a viewing</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+<!-- ================= HERO ================= -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-art" aria-hidden="true">
+    <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice">
+      <defs>
+        <linearGradient id="hSky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#131315"/>
+          <stop offset=".38" stop-color="#2A241F"/>
+          <stop offset=".62" stop-color="#6E5338"/>
+          <stop offset=".72" stop-color="#C79A62"/>
+          <stop offset=".74" stop-color="#E5C796"/>
+        </linearGradient>
+        <linearGradient id="hSea" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#5A4632"/>
+          <stop offset=".25" stop-color="#2B2520"/>
+          <stop offset="1" stop-color="#121214"/>
+        </linearGradient>
+        <radialGradient id="hSun" cx=".5" cy=".5" r=".5">
+          <stop offset="0" stop-color="#FFE9C2"/>
+          <stop offset=".35" stop-color="#F2CF96" stop-opacity=".85"/>
+          <stop offset="1" stop-color="#E0A866" stop-opacity="0"/>
+        </radialGradient>
+        <pattern id="hWin" width="9" height="12" patternUnits="userSpaceOnUse">
+          <rect x="2" y="3" width="3" height="5" fill="#E7C08A" opacity=".55"/>
+        </pattern>
+        <pattern id="hWin2" width="7" height="10" patternUnits="userSpaceOnUse">
+          <rect x="2" y="2" width="2" height="4" fill="#F0CF9C" opacity=".35"/>
+        </pattern>
+        <clipPath id="hWaterClip"><rect x="0" y="652" width="1440" height="248"/></clipPath>
+        <g id="hCity">
+          <!-- far layer -->
+          <g fill="#3A2F27" opacity=".85">
+            <rect x="520" y="560" width="26" height="92"/><rect x="552" y="540" width="20" height="112"/><rect x="580" y="575" width="34" height="77"/>
+            <rect x="620" y="548" width="22" height="104"/><rect x="650" y="520" width="18" height="132"/><rect x="676" y="565" width="30" height="87"/>
+            <rect x="712" y="535" width="24" height="117"/><rect x="742" y="505" width="20" height="147"/><rect x="770" y="560" width="36" height="92"/>
+            <rect x="812" y="530" width="22" height="122"/><rect x="842" y="548" width="28" height="104"/><rect x="876" y="500" width="18" height="152"/>
+            <rect x="900" y="555" width="30" height="97"/><rect x="936" y="525" width="22" height="127"/><rect x="964" y="572" width="34" height="80"/>
+            <rect x="1150" y="540" width="24" height="112"/><rect x="1180" y="515" width="20" height="137"/><rect x="1206" y="560" width="34" height="92"/>
+            <rect x="1246" y="530" width="22" height="122"/><rect x="1274" y="552" width="28" height="100"/><rect x="1308" y="520" width="18" height="132"/>
+            <rect x="1332" y="566" width="40" height="86"/><rect x="1378" y="540" width="24" height="112"/><rect x="1408" y="560" width="32" height="92"/>
+          </g>
+          <!-- mid layer -->
+          <g fill="#221D19">
+            <path d="M600 652V470h30l6-14h10l6 14h4v182z"/>
+            <path d="M700 652V430c10-12 30-12 40 0v222z"/>
+            <rect x="760" y="470" width="44" height="182"/>
+            <path d="M820 652V400l24-30 24 30v252z"/>
+            <rect x="890" y="455" width="38" height="197"/>
+            <path d="M944 652V420h14v-26h8v26h14v232z"/>
+            <rect x="1130" y="440" width="40" height="212"/>
+            <path d="M1186 652V380c14-22 40-22 54 0v272z"/>
+            <rect x="1256" y="470" width="44" height="182"/>
+            <path d="M1316 652V430l20-20 20 20v222z"/>
+            <rect x="1372" y="480" width="40" height="172"/>
+          </g>
+          <g fill="url(#hWin2)">
+            <rect x="606" y="480" width="40" height="170"/><rect x="704" y="440" width="32" height="210"/><rect x="764" y="478" width="36" height="172"/>
+            <rect x="826" y="410" width="36" height="240"/><rect x="894" y="462" width="30" height="188"/><rect x="1134" y="448" width="32" height="202"/>
+            <rect x="1192" y="392" width="42" height="258"/><rect x="1260" y="478" width="36" height="172"/><rect x="1320" y="438" width="32" height="212"/>
+          </g>
+          <!-- supertall -->
+          <path fill="#181513" d="M1036 652V540h8V440h9V352h9V272h7V206h5V150l3-8V60l3 0v82l3 8v56h5v66h7v80h9v88h9v100h8v112z"/>
+          <path fill="url(#hWin)" d="M1046 650V545h8V445h9V357h9V277h7V211h5V160h6v51h5v66h7v80h9v88h9v100h8v105z" opacity=".55"/>
+          <line x1="1081" y1="60" x2="1081" y2="20" stroke="#3B322A" stroke-width="2"/>
+          <!-- near low-rise & waterfront -->
+          <g fill="#151315">
+            <path d="M0 652V600h60v-22h50v22h40v-36h70v88z"/>
+            <path d="M220 652V610c40-30 120-30 160 0v42z"/>
+            <rect x="380" y="590" width="70" height="62"/><rect x="455" y="610" width="60" height="42"/>
+            <rect x="980" y="600" width="60" height="52"/><rect x="1120" y="612" width="90" height="40"/>
+          </g>
+          <rect x="0" y="648" width="1440" height="6" fill="#100E0E"/>
+        </g>
+      </defs>
+      <rect width="1440" height="900" fill="url(#hSky)"/>
+      <!-- architectural grid -->
+      <g stroke="#E7D6B8" stroke-opacity=".05" stroke-width="1">
+        <line x1="720" y1="0" x2="720" y2="652"/><line x1="900" y1="0" x2="900" y2="652"/><line x1="1080" y1="0" x2="1080" y2="652"/><line x1="1260" y1="0" x2="1260" y2="652"/>
+        <line x1="540" y1="120" x2="1440" y2="120"/><line x1="540" y1="300" x2="1440" y2="300"/>
+      </g>
+      <circle cx="1080" cy="160" r="290" fill="none" stroke="#E7D6B8" stroke-opacity=".07"/>
+      <circle cx="1080" cy="160" r="200" fill="none" stroke="#E7D6B8" stroke-opacity=".05"/>
+      <circle class="sun-glow" cx="900" cy="615" r="190" fill="url(#hSun)"/>
+      <circle cx="900" cy="615" r="46" fill="#FFE6BC" opacity=".9"/>
+      <use href="#hCity"/>
+      <rect x="0" y="652" width="1440" height="248" fill="url(#hSea)"/>
+      <g clip-path="url(#hWaterClip)" opacity=".22"><use href="#hCity" transform="matrix(1 0 0 -1 0 1304)"/></g>
+      <g class="shimmer" stroke="#F2D3A0" stroke-linecap="round">
+        <line x1="840" y1="668" x2="960" y2="668" stroke-width="2"/>
+        <line x1="860" y1="684" x2="940" y2="684" stroke-width="2"/>
+        <line x1="820" y1="704" x2="980" y2="704" stroke-width="1.5"/>
+        <line x1="876" y1="728" x2="924" y2="728" stroke-width="1.5"/>
+        <line x1="800" y1="756" x2="1000" y2="756" stroke-width="1"/>
+        <line x1="860" y1="790" x2="940" y2="790" stroke-width="1"/>
+      </g>
+      <!-- yacht -->
+      <g transform="translate(1180 700)" fill="#0E0D0D">
+        <path d="M0 14h120l-14 12H10z"/><path d="M22 14l10-10h44l14 10z"/><rect x="40" y="0" width="22" height="5"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="wrap hero-inner">
+    <span class="eyebrow rise">Private Property Advisory · Dubai</span>
+    <h1 class="rise r2" id="hero-title">Addresses that <em>define</em> a skyline.</h1>
+    <p class="hero-lede rise r3">A curated portfolio of waterfront villas, sky penthouses and signature residences across Dubai's most coveted districts — guided end-to-end for international buyers.</p>
+
+    <form class="search rise r4" id="search" aria-label="Property search (demo)">
+      <div class="field">
+        <label for="s-loc">Location</label>
+        <select id="s-loc">
+          <option>All neighbourhoods</option>
+          <option>Palm Jumeirah</option>
+          <option>Downtown Dubai</option>
+          <option>Dubai Marina</option>
+          <option>Emirates Hills</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="s-type">Property type</label>
+        <select id="s-type">
+          <option value="all">Any type</option>
+          <option value="villa">Villa</option>
+          <option value="penthouse">Penthouse</option>
+          <option value="apartment">Apartment</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="s-budget">Budget (AED)</label>
+        <select id="s-budget">
+          <option>Any budget</option>
+          <option>5M – 10M</option>
+          <option>10M – 25M</option>
+          <option>25M – 50M</option>
+          <option>50M +</option>
+        </select>
+      </div>
+      <button class="btn btn-dark" type="submit">Search
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+      </button>
+    </form>
+    <p class="search-note rise r5" id="search-note" role="status" aria-live="polite"></p>
+
+    <div class="hero-meta rise r5">
+      <span>Palm Jumeirah</span><span>Downtown</span><span>Dubai Marina</span><span>Emirates Hills</span>
+    </div>
+  </div>
+
+  <aside class="hero-feature rise r5" aria-label="Featured residence">
+    <div class="lbl">Featured residence</div>
+    <h3>The Crescent Residence</h3>
+    <p>Frond villa · Palm Jumeirah</p>
+    <div class="row">
+      <span class="price">AED 38.5M</span>
+      <a href="#properties">View</a>
+    </div>
+  </aside>
+</section>
+
+<!-- ================= PROPERTIES ================= -->
+<section class="section" id="properties" aria-labelledby="props-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="reveal">
+        <span class="eyebrow" style="color:var(--sand-deep)">Featured Collection</span>
+        <h2 class="section-title" id="props-title">Residences of <em>rare</em> distinction.</h2>
+      </div>
+      <p class="section-intro reveal d1">Each listing in our collection is personally viewed and vetted by an advisor. Below, a selection of current highlights across our four districts.</p>
+    </div>
+
+    <div class="filters reveal" role="group" aria-label="Filter properties">
+      <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+      <button class="chip" type="button" data-filter="villa" aria-pressed="false">Villas</button>
+      <button class="chip" type="button" data-filter="penthouse" aria-pressed="false">Penthouses</button>
+      <button class="chip" type="button" data-filter="apartment" aria-pressed="false">Apartments</button>
+    </div>
+
+    <div class="grid" id="grid">
+      <!-- 1 -->
+      <article class="card reveal" data-type="villa">
+        <div class="card-media">
+          <span class="tag">Signature</span>
+          <button class="fav" type="button" aria-label="Save The Crescent Residence" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9-9.2C1.7 7.4 4 4 7.4 4c2 0 3.5 1.1 4.6 2.6C13.1 5.1 14.6 4 16.6 4 20 4 22.3 7.4 21 10.8 19 15.6 12 20 12 20z"/></svg></button>
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+              <linearGradient id="c1s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2B2622"/><stop offset=".55" stop-color="#8E6B48"/><stop offset=".8" stop-color="#E7C795"/></linearGradient>
+              <linearGradient id="c1w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6D9A6"/><stop offset="1" stop-color="#C98F52"/></linearGradient>
+              <linearGradient id="c1sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4A3E33"/><stop offset="1" stop-color="#171517"/></linearGradient>
+            </defs>
+            <rect width="400" height="300" fill="url(#c1s)"/>
+            <circle cx="292" cy="196" r="30" fill="#F7E0B6" opacity=".9"/>
+            <rect y="204" width="400" height="96" fill="url(#c1sea)"/>
+            <g stroke="#F1D3A2" opacity=".4"><line x1="262" y1="214" x2="322" y2="214"/><line x1="272" y1="224" x2="312" y2="224"/><line x1="250" y1="236" x2="334" y2="236"/></g>
+            <rect x="30" y="196" width="290" height="16" fill="#121113"/>
+            <rect x="58" y="138" width="170" height="58" fill="#1A1819"/>
+            <rect x="66" y="148" width="154" height="40" fill="url(#c1w)" opacity=".85"/>
+            <g stroke="#1A1819" stroke-width="2.5"><line x1="104" y1="148" x2="104" y2="188"/><line x1="142" y1="148" x2="142" y2="188"/><line x1="180" y1="148" x2="180" y2="188"/></g>
+            <rect x="110" y="106" width="196" height="32" fill="#232124"/>
+            <rect x="120" y="113" width="176" height="18" fill="url(#c1w)" opacity=".7"/>
+            <rect x="100" y="102" width="216" height="5" fill="#0F0E0F"/>
+            <rect x="48" y="134" width="190" height="5" fill="#0F0E0F"/>
+            <rect x="50" y="214" width="210" height="9" fill="#7FB0B5" opacity=".55"/>
+            <g fill="none" stroke="#0C0B0C" stroke-width="5" stroke-linecap="round">
+              <path d="M352 212c-2-40 0-80 8-116"/>
+            </g>
+            <g fill="#0C0B0C">
+              <path d="M360 96c-20-6-40 0-52 14 18-6 36-6 52-14z"/><path d="M360 96c18-10 40-8 54 6-18-4-36-4-54-6z"/>
+              <path d="M360 96c-8-16-24-24-40-24 14 6 28 14 40 24z"/><path d="M360 96c6-18 22-28 40-28-14 8-28 16-40 28z"/>
+              <path d="M360 96c-16 4-28 18-32 34 10-14 20-24 32-34z"/><path d="M360 96c16 6 26 20 28 36-8-14-18-26-28-36z"/>
+            </g>
+          </svg>
+        </div>
+        <div class="card-body">
+          <div class="card-area">Palm Jumeirah</div>
+          <h3><a href="#enquire">The Crescent Residence</a></h3>
+          <div class="price"><small>AED</small>38,500,000</div>
+          <div class="specs">
+            <span><svg viewBox="0 0 24 24"><path d="M3 18V8M3 14h18v4M21 14v-3a3 3 0 0 0-3-3h-7v6"/></svg>6 Beds</span>
+            <span><svg viewBox="0 0 24 24"><path d="M4 12h16v3a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4zM6 12V6a2 2 0 0 1 4 0"/></svg>7 Baths</span>
+            <span><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 9h5M15 20v-5h5"/></svg>11,800 sq ft</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2 -->
+      <article class="card reveal d1" data-type="penthouse">
+        <div class="card-media">
+          <span class="tag tag-dark">Penthouse</span>
+          <button class="fav" type="button" aria-label="Save Aurelia Sky Penthouse" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9-9.2C1.7 7.4 4 4 7.4 4c2 0 3.5 1.1 4.6 2.6C13.1 5.1 14.6 4 16.6 4 20 4 22.3 7.4 21 10.8 19 15.6 12 20 12 20z"/></svg></button>
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+              <linearGradient id="c2s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0E1018"/><stop offset=".6" stop-color="#2A2630"/><stop offset="1" stop-color="#6A5038"/></linearGradient>
+              <pattern id="c2p" width="8" height="10" patternUnits="userSpaceOnUse"><rect x="2" y="2" width="3" height="4" fill="#F1C98E" opacity=".7"/></pattern>
+              <pattern id="c2q" width="8" height="10" patternUnits="userSpaceOnUse"><rect x="2" y="2" width="3" height="4" fill="#F1C98E" opacity=".25"/></pattern>
+            </defs>
+            <rect width="400" height="300" fill="url(#c2s)"/>
+            <g fill="#E7D6B8"><circle cx="40" cy="30" r="1"/><circle cx="96" cy="58" r=".8"/><circle cx="150" cy="22" r="1.1"/><circle cx="330" cy="40" r="1"/><circle cx="370" cy="80" r=".8"/><circle cx="270" cy="18" r=".9"/></g>
+            <circle cx="320" cy="62" r="16" fill="#EDE2CC" opacity=".85"/><circle cx="326" cy="58" r="14" fill="#1A1820"/>
+            <g fill="#14131A">
+              <rect x="10" y="170" width="40" height="130"/><rect x="56" y="140" width="34" height="160"/><rect x="250" y="150" width="40" height="150"/><rect x="300" y="120" width="36" height="180"/><rect x="342" y="176" width="58" height="124"/>
+            </g>
+            <g fill="url(#c2q)"><rect x="14" y="176" width="32" height="124"/><rect x="60" y="146" width="26" height="154"/><rect x="254" y="156" width="32" height="144"/><rect x="304" y="126" width="28" height="174"/><rect x="346" y="182" width="50" height="118"/></g>
+            <path d="M120 300V120l30-24h70l30 24v180z" fill="#1D1B22"/>
+            <rect x="128" y="132" width="114" height="168" fill="url(#c2p)"/>
+            <rect x="116" y="96" width="138" height="30" fill="#2B2730"/>
+            <rect x="124" y="102" width="122" height="18" fill="#F3D3A0" opacity=".85"/>
+            <g stroke="#2B2730" stroke-width="2"><line x1="154" y1="102" x2="154" y2="120"/><line x1="185" y1="102" x2="185" y2="120"/><line x1="216" y1="102" x2="216" y2="120"/></g>
+            <rect x="110" y="92" width="150" height="5" fill="#0D0C10"/>
+            <path d="M150 92l35-30 35 30" fill="none" stroke="#C8A97E" stroke-width="1.2" opacity=".6"/>
+            <rect x="0" y="292" width="400" height="8" fill="#0D0C10"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <div class="card-area">Downtown Dubai</div>
+          <h3><a href="#enquire">Aurelia Sky Penthouse</a></h3>
+          <div class="price"><small>AED</small>24,900,000</div>
+          <div class="specs">
+            <span><svg viewBox="0 0 24 24"><path d="M3 18V8M3 14h18v4M21 14v-3a3 3 0 0 0-3-3h-7v6"/></svg>4 Beds</span>
+            <span><svg viewBox="0 0 24 24"><path d="M4 12h16v3a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4zM6 12V6a2 2 0 0 1 4 0"/></svg>5 Baths</span>
+            <span><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 9h5M15 20v-5h5"/></svg>7,450 sq ft</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3 -->
+      <article class="card reveal d2" data-type="apartment">
+        <div class="card-media">
+          <span class="tag">Waterfront</span>
+          <button class="fav" type="button" aria-label="Save Marina Vista Residence" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9-9.2C1.7 7.4 4 4 7.4 4c2 0 3.5 1.1 4.6 2.6C13.1 5.1 14.6 4 16.6 4 20 4 22.3 7.4 21 10.8 19 15.6 12 20 12 20z"/></svg></button>
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+              <linearGradient id="c3s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1C2026"/><stop offset=".55" stop-color="#5C5048"/><stop offset=".78" stop-color="#D9B585"/></linearGradient>
+              <linearGradient id="c3w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3C3632"/><stop offset="1" stop-color="#141517"/></linearGradient>
+              <linearGradient id="c3t" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2A2A2E"/><stop offset=".5" stop-color="#3A3936"/><stop offset="1" stop-color="#1E1E22"/></linearGradient>
+            </defs>
+            <rect width="400" height="300" fill="url(#c3s)"/>
+            <g fill="url(#c3t)">
+              <path d="M40 220V70c0-14 30-14 30 0v150z"/>
+              <path d="M84 220V40c4-10 28-10 32 0v180z"/>
+              <path d="M130 220V96l16-12 16 12v124z"/>
+              <path d="M236 220V60c6-16 34-16 40 0v160z"/>
+              <path d="M290 220V100h34v120z"/>
+              <path d="M336 220V30c6-12 24-12 30 0v190z"/>
+            </g>
+            <g stroke="#E8C995" stroke-opacity=".35" stroke-width="1">
+              <path d="M90 60h20M90 76h20M90 92h20M90 108h20M90 124h20M90 140h20M90 156h20M90 172h20M90 188h20"/>
+              <path d="M342 50h18M342 66h18M342 82h18M342 98h18M342 114h18M342 130h18M342 146h18M342 162h18M342 178h18M342 194h18"/>
+              <path d="M242 76h28M242 92h28M242 108h28M242 124h28M242 140h28M242 156h28M242 172h28M242 188h28"/>
+            </g>
+            <rect y="218" width="400" height="82" fill="url(#c3w)"/>
+            <g stroke="#E9C690" stroke-opacity=".35"><line x1="88" y1="232" x2="112" y2="232"/><line x1="340" y1="240" x2="362" y2="240"/><line x1="240" y1="250" x2="272" y2="250"/><line x1="40" y1="262" x2="70" y2="262"/></g>
+            <g fill="#F2ECE1">
+              <path d="M150 246h90l-12 9h-70z"/><path d="M170 246l8-8h36l10 8z" opacity=".9"/>
+            </g>
+            <g fill="#0F0F11"><path d="M260 268h60l-8 6h-46z"/><path d="M272 268l5-5h24l6 5z"/></g>
+            <rect y="216" width="400" height="3" fill="#0F0F11"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <div class="card-area">Dubai Marina</div>
+          <h3><a href="#enquire">Marina Vista Residence</a></h3>
+          <div class="price"><small>AED</small>6,750,000</div>
+          <div class="specs">
+            <span><svg viewBox="0 0 24 24"><path d="M3 18V8M3 14h18v4M21 14v-3a3 3 0 0 0-3-3h-7v6"/></svg>3 Beds</span>
+            <span><svg viewBox="0 0 24 24"><path d="M4 12h16v3a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4zM6 12V6a2 2 0 0 1 4 0"/></svg>4 Baths</span>
+            <span><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 9h5M15 20v-5h5"/></svg>2,980 sq ft</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4 -->
+      <article class="card reveal" data-type="villa">
+        <div class="card-media">
+          <span class="tag tag-dark">Estate</span>
+          <button class="fav" type="button" aria-label="Save Hillcrest Manor" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9-9.2C1.7 7.4 4 4 7.4 4c2 0 3.5 1.1 4.6 2.6C13.1 5.1 14.6 4 16.6 4 20 4 22.3 7.4 21 10.8 19 15.6 12 20 12 20z"/></svg></button>
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+              <linearGradient id="c4s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EFE5D3"/><stop offset="1" stop-color="#DCC5A0"/></linearGradient>
+              <linearGradient id="c4g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7E8463"/><stop offset="1" stop-color="#4F5641"/></linearGradient>
+            </defs>
+            <rect width="400" height="300" fill="url(#c4s)"/>
+            <circle cx="320" cy="70" r="40" fill="#F7EBD3"/>
+            <path d="M0 210c80-26 160-30 240-20s120 6 160-6v116H0z" fill="url(#c4g)"/>
+            <path d="M0 236c90-14 200-14 400-6v70H0z" fill="#5C6349" opacity=".7"/>
+            <g fill="#545A44"><circle cx="40" cy="186" r="22"/><circle cx="66" cy="194" r="16"/><circle cx="352" cy="180" r="24"/><circle cx="378" cy="192" r="16"/></g>
+            <g fill="none" stroke="#2A2622" stroke-width="1.4">
+              <rect x="110" y="128" width="180" height="76" fill="#F6EFE2"/>
+              <rect x="150" y="96" width="100" height="32" fill="#F6EFE2"/>
+              <path d="M100 128h200M140 96h120"/>
+              <path d="M100 124h200v4H100zM140 92h120v4H140z" fill="#2A2622"/>
+              <path d="M128 136v68M146 136v68M164 136v68M236 136v68M254 136v68M272 136v68"/>
+              <rect x="182" y="150" width="36" height="54" fill="#D9C29C"/>
+              <path d="M200 150v54"/>
+              <rect x="162" y="102" width="20" height="20" fill="#E6D3B3"/><rect x="190" y="102" width="20" height="20" fill="#E6D3B3"/><rect x="218" y="102" width="20" height="20" fill="#E6D3B3"/>
+              <path d="M90 204h220"/>
+            </g>
+            <path d="M200 204c-6 30-40 60-80 96h160c-40-36-74-66-80-96z" fill="#E8D9BE" opacity=".8"/>
+            <ellipse cx="320" cy="250" rx="34" ry="8" fill="#A9C2C1" opacity=".7"/>
+            <g stroke="#2A2622" stroke-width="1"><line x1="320" y1="250" x2="320" y2="226"/><path d="M320 226l14 5-14 5z" fill="#B8463A" stroke="none"/></g>
+          </svg>
+        </div>
+        <div class="card-body">
+          <div class="card-area">Emirates Hills</div>
+          <h3><a href="#enquire">Hillcrest Manor</a></h3>
+          <div class="price"><small>AED</small>52,000,000</div>
+          <div class="specs">
+            <span><svg viewBox="0 0 24 24"><path d="M3 18V8M3 14h18v4M21 14v-3a3 3 0 0 0-3-3h-7v6"/></svg>7 Beds</span>
+            <span><svg viewBox="0 0 24 24"><path d="M4 12h16v3a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4zM6 12V6a2 2 0 0 1 4 0"/></svg>9 Baths</span>
+            <span><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 9h5M15 20v-5h5"/></svg>18,400 sq ft</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5 -->
+      <article class="card reveal d1" data-type="villa">
+        <div class="card-media">
+          <span class="tag">New to market</span>
+          <button class="fav" type="button" aria-label="Save Azure Shore Villa" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9-9.2C1.7 7.4 4 4 7.4 4c2 0 3.5 1.1 4.6 2.6C13.1 5.1 14.6 4 16.6 4 20 4 22.3 7.4 21 10.8 19 15.6 12 20 12 20z"/></svg></button>
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="400" height="300" fill="#F3ECE0"/>
+            <g stroke="#C8A97E" stroke-opacity=".25"><path d="M0 40h400M0 80h400M0 120h400M0 160h400M0 200h400M0 240h400M40 0v300M80 0v300M120 0v300M160 0v300M200 0v300M240 0v300M280 0v300M320 0v300M360 0v300"/></g>
+            <rect y="218" width="400" height="82" fill="#C9DAD6" opacity=".7"/>
+            <path d="M0 218h400" stroke="#2A2622" stroke-width="1.2"/>
+            <g fill="none" stroke="#2A2622" stroke-width="1.5">
+              <path d="M60 218V150h120v68"/>
+              <path d="M150 150V108h170v110"/>
+              <path d="M40 150h160M130 108h210"/>
+              <path d="M40 146h160v4H40zM130 104h210v4H130z" fill="#2A2622"/>
+              <path d="M76 160h88v50H76z" fill="#E7D6B8"/>
+              <path d="M98 160v50M120 160v50M142 160v50"/>
+              <path d="M170 118h136v36H170z" fill="#E7D6B8"/>
+              <path d="M204 118v36M238 118v36M272 118v36"/>
+              <path d="M200 164h106v54H200z"/>
+              <path d="M220 164v54"/>
+              <path d="M30 228h250" stroke-dasharray="4 4"/>
+            </g>
+            <g fill="#2A2622"><circle cx="350" cy="210" r="2"/></g>
+            <g fill="none" stroke="#2A2622" stroke-width="1.6" stroke-linecap="round">
+              <path d="M356 218c0-34 4-64 14-90"/>
+              <path d="M370 128c-14-6-28-2-36 8M370 128c12-8 28-6 36 4M370 128c-4-14-16-20-28-20M370 128c4-14 16-22 30-20M370 128c-10 6-16 18-16 30M370 128c10 4 18 16 18 28"/>
+            </g>
+            <g fill="#C8A97E" font-family="Manrope,sans-serif" font-size="8" letter-spacing="2"><text x="24" y="30">ELEVATION · SOUTH</text><text x="24" y="282" fill="#2A2622" opacity=".6">SCALE 1:200 — CONCEPT</text></g>
+          </svg>
+        </div>
+        <div class="card-body">
+          <div class="card-area">Palm Jumeirah</div>
+          <h3><a href="#enquire">Azure Shore Villa</a></h3>
+          <div class="price"><small>AED</small>18,200,000</div>
+          <div class="specs">
+            <span><svg viewBox="0 0 24 24"><path d="M3 18V8M3 14h18v4M21 14v-3a3 3 0 0 0-3-3h-7v6"/></svg>5 Beds</span>
+            <span><svg viewBox="0 0 24 24"><path d="M4 12h16v3a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4zM6 12V6a2 2 0 0 1 4 0"/></svg>6 Baths</span>
+            <span><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 9h5M15 20v-5h5"/></svg>8,250 sq ft</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6 -->
+      <article class="card reveal d2" data-type="apartment">
+        <div class="card-media">
+          <span class="tag tag-dark">Off-plan</span>
+          <button class="fav" type="button" aria-label="Save The Opus Line Residence" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9-9.2C1.7 7.4 4 4 7.4 4c2 0 3.5 1.1 4.6 2.6C13.1 5.1 14.6 4 16.6 4 20 4 22.3 7.4 21 10.8 19 15.6 12 20 12 20z"/></svg></button>
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+              <radialGradient id="c6g" cx=".6" cy=".3" r=".8"><stop offset="0" stop-color="#2C2822"/><stop offset="1" stop-color="#121214"/></radialGradient>
+            </defs>
+            <rect width="400" height="300" fill="url(#c6g)"/>
+            <g stroke="#E7D6B8" stroke-opacity=".06"><path d="M0 50h400M0 100h400M0 150h400M0 200h400M0 250h400M50 0v300M100 0v300M150 0v300M200 0v300M250 0v300M300 0v300M350 0v300"/></g>
+            <g fill="none" stroke="#C8A97E" stroke-width="1.1">
+              <path d="M200 30l60 30v200l-60 30-60-30V60z"/>
+              <path d="M200 30v260M140 60l60 30 60-30M200 90v200"/>
+              <path d="M140 90l60 30 60-30M140 120l60 30 60-30M140 150l60 30 60-30M140 180l60 30 60-30M140 210l60 30 60-30M140 240l60 30 60-30" stroke-opacity=".55"/>
+              <path d="M160 70v200M180 80v200M220 80v200M240 70v200" stroke-opacity=".25"/>
+            </g>
+            <path d="M200 90l60-30v40l-60 30z" fill="#C8A97E" opacity=".2"/>
+            <g fill="none" stroke="#E7D6B8" stroke-opacity=".4" stroke-width=".8">
+              <path d="M60 260l40-20 40 20-40 20zM260 260l40-20 40 20-40 20z"/>
+              <path d="M60 260v-50l40-20 40 20v50M260 260v-80l40-20 40 20v80"/>
+              <path d="M100 240v-50M300 240v-80"/>
+            </g>
+            <circle cx="200" cy="30" r="3" fill="#E7D6B8"/>
+            <g fill="#C8A97E" font-family="Manrope,sans-serif" font-size="8" letter-spacing="2"><text x="22" y="28">AXONOMETRIC</text><text x="300" y="28">L-62</text></g>
+          </svg>
+        </div>
+        <div class="card-body">
+          <div class="card-area">Dubai Marina</div>
+          <h3><a href="#enquire">The Opus Line Residence</a></h3>
+          <div class="price"><small>AED</small>9,450,000</div>
+          <div class="specs">
+            <span><svg viewBox="0 0 24 24"><path d="M3 18V8M3 14h18v4M21 14v-3a3 3 0 0 0-3-3h-7v6"/></svg>4 Beds</span>
+            <span><svg viewBox="0 0 24 24"><path d="M4 12h16v3a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4zM6 12V6a2 2 0 0 1 4 0"/></svg>4 Baths</span>
+            <span><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 9h5M15 20v-5h5"/></svg>4,120 sq ft</span>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="props-foot reveal">
+      <span>Showing <strong id="count">6</strong> of our featured residences · Further listings shared privately on request.</span>
+      <a class="btn btn-outline-dark" href="#enquire">Request the private portfolio
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY DUBAI ================= -->
+<section class="section dark why" id="why-dubai" aria-labelledby="why-title">
+  <svg class="why-bg" viewBox="0 0 600 600" aria-hidden="true">
+    <g fill="none" stroke="#C8A97E" stroke-opacity=".18">
+      <circle cx="300" cy="300" r="280"/><circle cx="300" cy="300" r="220"/><circle cx="300" cy="300" r="160"/><circle cx="300" cy="300" r="100"/>
+      <path d="M20 300h560M300 20v560M102 102l396 396M498 102L102 498"/>
+    </g>
+  </svg>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="reveal">
+        <span class="eyebrow">Why invest in Dubai</span>
+        <h2 class="section-title" id="why-title">A city built for <em>ambition</em> — and for living well.</h2>
+      </div>
+      <p class="section-intro reveal d1">International buyers are drawn to Dubai for its tax environment, residency pathways and lifestyle. A few of the fundamentals our advisors walk clients through:</p>
+    </div>
+
+    <div class="stats">
+      <div class="stat reveal">
+        <div class="stat-num">0<sup>%</sup></div>
+        <h3>Personal income tax</h3>
+        <p>No personal income tax on salaries in the UAE — a key consideration for relocating professionals and families.</p>
+      </div>
+      <div class="stat reveal d1">
+        <div class="stat-num">10<sup>yr</sup></div>
+        <h3>Residency pathways</h3>
+        <p>Long-term residence visas are available to qualifying property investors, subject to current government criteria.</p>
+      </div>
+      <div class="stat reveal d2">
+        <div class="stat-num">100<sup>%</sup></div>
+        <h3>Freehold ownership</h3>
+        <p>Foreign nationals may own property outright in designated freehold areas, including all four districts we cover.</p>
+      </div>
+      <div class="stat reveal d3">
+        <div class="stat-num">GMT<sup>+4</sup></div>
+        <h3>A global crossroads</h3>
+        <p>A time-zone bridge between Europe, Asia and Africa, with direct flights to major cities worldwide.</p>
+      </div>
+    </div>
+    <p class="why-note reveal">Illustrative overview for a concept website only. Regulations change; this is not legal, tax or investment advice. Always verify with qualified professionals.</p>
+
+    <div class="pillars">
+      <div class="pillar reveal">
+        <div class="pillar-ic"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <div><h4>Clear, regulated transactions</h4><p>Escrow-backed off-plan purchases and a transparent registration process.</p></div>
+      </div>
+      <div class="pillar reveal d1">
+        <div class="pillar-ic"><svg viewBox="0 0 24 24"><path d="M3 20h18M5 20V9l7-5 7 5v11M10 20v-6h4v6"/></svg></div>
+        <div><h4>World-class infrastructure</h4><p>Modern transport, private schools, healthcare and leisure on the doorstep.</p></div>
+      </div>
+      <div class="pillar reveal d2">
+        <div class="pillar-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/></svg></div>
+        <div><h4>Year-round lifestyle</h4><p>Beaches, marinas, golf and a dining scene that rivals any global capital.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= NEIGHBOURHOODS ================= -->
+<section class="section" id="neighbourhoods" aria-labelledby="hood-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="reveal">
+        <span class="eyebrow" style="color:var(--sand-deep)">Neighbourhood Guide</span>
+        <h2 class="section-title" id="hood-title">Four districts. <em>Four</em> ways to live.</h2>
+      </div>
+      <p class="section-intro reveal d1">From island villas to sky-high city living, we help you choose the address that fits your life — not just your portfolio.</p>
+    </div>
+
+    <div class="hoods">
+      <article class="hood reveal" tabindex="0">
+        <div class="hood-art" aria-hidden="true">
+          <svg viewBox="0 0 300 520" preserveAspectRatio="xMidYMid slice">
+            <rect width="300" height="520" fill="#1A1816"/>
+            <g fill="none" stroke="#C8A97E" stroke-width="1.2" stroke-linecap="round">
+              <path d="M150 400V120"/>
+              <path d="M150 360c-30-6-70-8-100-2M150 330c-30-8-72-12-104-6M150 300c-30-10-72-16-104-10M150 270c-30-10-70-18-100-14M150 240c-28-10-64-18-92-16M150 210c-24-10-56-16-80-14M150 180c-20-8-44-12-62-10"/>
+              <path d="M150 360c30-6 70-8 100-2M150 330c30-8 72-12 104-6M150 300c30-10 72-16 104-10M150 270c30-10 70-18 100-14M150 240c28-10 64-18 92-16M150 210c24-10 56-16 80-14M150 180c20-8 44-12 62-10"/>
+              <path d="M30 150a130 160 0 1 0 240 0" stroke-opacity=".7"/>
+              <path d="M150 400v40" stroke-dasharray="3 5"/>
+              <circle cx="150" cy="112" r="10"/>
+            </g>
+            <g fill="none" stroke="#E7D6B8" stroke-opacity=".08"><circle cx="150" cy="250" r="200"/><circle cx="150" cy="250" r="240"/></g>
+          </svg>
+        </div>
+        <span class="hood-num">01</span>
+        <div class="hood-body">
+          <h3>Palm Jumeirah</h3>
+          <p>Island living with private beaches, frond villas and branded residences.</p>
+          <div class="hood-more"><div>
+            <dl><dt>Best for</dt><dd>Beachfront family homes</dd><dt>Style</dt><dd>Villas, sky residences</dd><dt>Mood</dt><dd>Resort, private, iconic</dd></dl>
+            <a class="hood-link" href="#enquire">Explore Palm <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+          </div></div>
+        </div>
+      </article>
+
+      <article class="hood reveal d1" tabindex="0">
+        <div class="hood-art" aria-hidden="true">
+          <svg viewBox="0 0 300 520" preserveAspectRatio="xMidYMid slice">
+            <rect width="300" height="520" fill="#161517"/>
+            <g fill="none" stroke="#E7D6B8" stroke-opacity=".08"><path d="M0 80h300M0 160h300M0 240h300M0 320h300M60 0v520M120 0v520M180 0v520M240 0v520"/></g>
+            <g fill="none" stroke="#C8A97E" stroke-width="1.2">
+              <path d="M150 30v40M146 70h8v40h-8zM142 110h16v50h-16zM137 160h26v60h-26zM132 220h36v70h-36zM126 290h48v80h-48z"/>
+              <path d="M150 70v300" stroke-opacity=".35"/>
+              <path d="M40 370h220"/>
+              <path d="M70 330v40M88 300v70M106 320v50M194 310v60M212 290v80M230 330v40" stroke-opacity=".6"/>
+              <path d="M60 330h20v40M82 300h12v70M100 320h12v50M188 310h12v60M206 290h12v80M224 330h12v40" stroke-opacity=".45"/>
+            </g>
+            <g fill="none" stroke="#E7D6B8" stroke-opacity=".5">
+              <path d="M90 400c20-30 40-30 60 0s40 30 60 0"/><path d="M70 400c26-50 54-50 80 0s54 50 80 0" stroke-opacity=".5"/>
+              <ellipse cx="150" cy="404" rx="110" ry="14"/>
+            </g>
+          </svg>
+        </div>
+        <span class="hood-num">02</span>
+        <div class="hood-body">
+          <h3>Downtown Dubai</h3>
+          <p>The city's beating heart — landmark towers, boulevards and cultural venues.</p>
+          <div class="hood-more"><div>
+            <dl><dt>Best for</dt><dd>Urban professionals</dd><dt>Style</dt><dd>Penthouses, apartments</dd><dt>Mood</dt><dd>Vibrant, cosmopolitan</dd></dl>
+            <a class="hood-link" href="#enquire">Explore Downtown <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+          </div></div>
+        </div>
+      </article>
+
+      <article class="hood reveal d2" tabindex="0">
+        <div class="hood-art" aria-hidden="true">
+          <svg viewBox="0 0 300 520" preserveAspectRatio="xMidYMid slice">
+            <rect width="300" height="520" fill="#141618"/>
+            <g fill="none" stroke="#C8A97E" stroke-width="1.2">
+              <path d="M110 0c-40 120 60 160 20 280s-60 160-20 240"/>
+              <path d="M170 0c-40 120 60 160 20 280s-60 160-20 240"/>
+            </g>
+            <g fill="none" stroke="#E7D6B8" stroke-opacity=".55" stroke-width="1">
+              <rect x="60" y="40" width="22" height="22"/><rect x="200" y="60" width="18" height="18"/><rect x="40" y="110" width="26" height="18"/><rect x="230" y="130" width="22" height="22"/>
+              <rect x="70" y="190" width="18" height="26"/><rect x="236" y="220" width="20" height="20"/><rect x="40" y="270" width="24" height="24"/><rect x="220" y="300" width="18" height="26"/>
+              <circle cx="88" cy="340" r="12"/><circle cx="236" cy="380" r="10"/><rect x="50" y="410" width="20" height="20"/><rect x="210" y="440" width="24" height="18"/>
+            </g>
+            <g fill="#C8A97E"><path d="M136 150l10-4 2 8z"/><path d="M150 240l10-4 2 8z"/><path d="M120 330l10-4 2 8z"/></g>
+          </svg>
+        </div>
+        <span class="hood-num">03</span>
+        <div class="hood-body">
+          <h3>Dubai Marina</h3>
+          <p>A waterfront skyline wrapped around a canal, promenades and yacht berths.</p>
+          <div class="hood-more"><div>
+            <dl><dt>Best for</dt><dd>Lifestyle investors</dd><dt>Style</dt><dd>High-rise apartments</dd><dt>Mood</dt><dd>Social, nautical</dd></dl>
+            <a class="hood-link" href="#enquire">Explore Marina <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+          </div></div>
+        </div>
+      </article>
+
+      <article class="hood reveal d3" tabindex="0">
+        <div class="hood-art" aria-hidden="true">
+          <svg viewBox="0 0 300 520" preserveAspectRatio="xMidYMid slice">
+            <rect width="300" height="520" fill="#171816"/>
+            <g fill="none" stroke="#C8A97E" stroke-width="1" stroke-opacity=".75">
+              <path d="M150 90c60 0 100 40 100 100s-50 110-110 110S40 250 40 190s50-100 110-100z"/>
+              <path d="M150 120c44 0 74 30 74 72s-36 80-80 80-78-32-78-76 40-76 84-76z"/>
+              <path d="M152 150c28 0 46 18 46 42s-22 50-50 50-50-22-50-46 26-46 54-46z"/>
+              <path d="M150 60c80 0 130 50 130 130s-70 140-140 140S10 270 10 190 70 60 150 60z" stroke-opacity=".35"/>
+            </g>
+            <ellipse cx="150" cy="196" rx="26" ry="16" fill="#C8A97E" opacity=".25"/>
+            <g fill="#E7D6B8" opacity=".75"><rect x="70" y="350" width="10" height="10"/><rect x="100" y="370" width="10" height="10"/><rect x="200" y="356" width="10" height="10"/><rect x="232" y="380" width="10" height="10"/><rect x="60" y="80" width="8" height="8"/><rect x="240" y="74" width="8" height="8"/></g>
+            <g fill="none" stroke="#E7D6B8" stroke-opacity=".3"><path d="M0 410c80-20 200-20 300 0M0 440c90-16 210-16 300 0"/></g>
+          </svg>
+        </div>
+        <span class="hood-num">04</span>
+        <div class="hood-body">
+          <h3>Emirates Hills</h3>
+          <p>Gated estates set around lakes and fairways — privacy at its most refined.</p>
+          <div class="hood-more"><div>
+            <dl><dt>Best for</dt><dd>Private estates</dd><dt>Style</dt><dd>Mansions, custom builds</dd><dt>Mood</dt><dd>Secluded, green, quiet</dd></dl>
+            <a class="hood-link" href="#enquire">Explore Hills <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+          </div></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= APPROACH ================= -->
+<section class="section approach" id="approach" aria-labelledby="approach-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="reveal">
+        <span class="eyebrow" style="color:var(--sand-deep)">Our Approach</span>
+        <h2 class="section-title" id="approach-title">Considered, <em>discreet</em>, end-to-end.</h2>
+      </div>
+      <p class="section-intro reveal d1">Buying from overseas should feel effortless. One advisor guides you from first conversation to the keys in your hand.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><span class="step-n">i.</span><h3>The brief</h3><p>A private consultation to understand your goals — lifestyle, yield, residency or legacy — and the shape of the ideal home.</p></div>
+      <div class="step reveal d1"><span class="step-n">ii.</span><h3>The curation</h3><p>A shortlist of on- and off-market residences, with video walkthroughs and neighbourhood briefings for remote buyers.</p></div>
+      <div class="step reveal d2"><span class="step-n">iii.</span><h3>The acquisition</h3><p>Negotiation, conveyancing coordination and handover — plus introductions for interiors, management and leasing.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ADVISOR CTA ================= -->
+<section class="advisor" aria-labelledby="advisor-title">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow reveal">Private Client Desk</span>
+      <h2 class="reveal d1" id="advisor-title">Speak with an advisor, <em>on your time zone.</em></h2>
+      <p class="reveal d2">Whether you're in London, Mumbai or Singapore, arrange a confidential call or a virtual viewing with a dedicated advisor who knows each building by name.</p>
+      <div class="advisor-actions reveal d3">
+        <a class="btn btn-sand" href="#enquire">Arrange a call
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="tel:+97140000000">+971 4 000 0000</a>
+      </div>
+      <div class="advisor-badges reveal d4">
+        <div><strong>English · العربية</strong>Languages</div>
+        <div><strong>Virtual</strong>Video viewings</div>
+        <div><strong>By appointment</strong>Private showings</div>
+      </div>
+    </div>
+    <div class="advisor-art reveal d2" aria-hidden="true">
+      <svg viewBox="0 0 500 500">
+        <defs>
+          <linearGradient id="aArch" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E7C895"/><stop offset=".55" stop-color="#A9784A"/><stop offset="1" stop-color="#2A221B"/></linearGradient>
+          <clipPath id="aClip"><path d="M110 470V220a140 140 0 0 1 280 0v250z"/></clipPath>
+        </defs>
+        <path d="M80 480V220a170 170 0 0 1 340 0v260" fill="none" stroke="#C8A97E" stroke-opacity=".35"/>
+        <path d="M110 470V220a140 140 0 0 1 280 0v250z" fill="url(#aArch)"/>
+        <g clip-path="url(#aClip)">
+          <circle cx="250" cy="300" r="60" fill="#FCE8C4" opacity=".8"/>
+          <g fill="#2A221B">
+            <rect x="110" y="330" width="40" height="140"/><rect x="156" y="300" width="30" height="170"/><rect x="192" y="350" width="34" height="120"/>
+            <path d="M262 470V250h6v-40h4v-40h2v40h4v40h6v220z"/>
+            <rect x="300" y="320" width="36" height="150"/><rect x="342" y="290" width="48" height="180"/>
+          </g>
+          <rect x="110" y="420" width="280" height="50" fill="#1A1611"/>
+          <g stroke="#F3D3A0" stroke-opacity=".5"><line x1="220" y1="434" x2="280" y2="434"/><line x1="232" y1="446" x2="268" y2="446"/></g>
+        </g>
+        <g fill="none" stroke="#E7D6B8" stroke-opacity=".5"><path d="M110 470h280"/><circle cx="420" cy="90" r="34"/><path d="M386 90h68M420 56v68" stroke-opacity=".3"/></g>
+        <g fill="#C8A97E" font-family="Cormorant Garamond,serif" font-style="italic" font-size="20"><text x="44" y="110">Meridian</text></g>
+        <path d="M44 120h90" stroke="#C8A97E" stroke-opacity=".5"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ENQUIRY ================= -->
+<section class="section enquire" id="enquire" aria-labelledby="enquire-title">
+  <div class="wrap">
+    <div>
+      <div class="reveal">
+        <span class="eyebrow" style="color:var(--sand-deep)">Enquire</span>
+        <h2 class="section-title" id="enquire-title">Begin a <em>private</em> conversation.</h2>
+        <p class="section-intro" style="margin-top:22px">Share a little about what you're looking for and an advisor will be in touch within one business day.</p>
+      </div>
+      <ul class="contact-list reveal d1">
+        <li><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><div><span>Telephone</span><a href="tel:+97140000000">+971 4 000 0000</a></div></li>
+        <li><svg viewBox="0 0 24 24"><path d="M3 6h18v12H3z"/><path d="M3 7l9 6 9-6"/></svg><div><span>Email</span><a href="mailto:hello@meridian.example">hello@meridian.example</a></div></li>
+        <li><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><div><span>Office</span><div>Suite 000, Example Tower, Dubai, UAE<br><small style="color:var(--stone)">(fictional address)</small></div></div></li>
+      </ul>
+    </div>
+
+    <form class="form reveal d1" id="enquiry-form" novalidate>
+      <h3>Enquiry</h3>
+      <p>All fields are optional in this demo.</p>
+      <div class="form-grid">
+        <div class="f"><label for="f-name">Full name</label><input id="f-name" name="name" type="text" placeholder="Your name" autocomplete="off"></div>
+        <div class="f"><label for="f-email">Email</label><input id="f-email" name="email" type="email" placeholder="you@example.com" autocomplete="off"></div>
+        <div class="f"><label for="f-country">Country of residence</label><input id="f-country" name="country" type="text" placeholder="e.g. United Kingdom" autocomplete="off"></div>
+        <div class="f"><label for="f-budget">Budget (AED)</label>
+          <select id="f-budget" name="budget"><option>Select a range</option><option>5M – 10M</option><option>10M – 25M</option><option>25M – 50M</option><option>50M +</option></select></div>
+        <div class="f full"><label id="pref-l">Interested in</label>
+          <div class="pref" role="group" aria-labelledby="pref-l">
+            <input type="checkbox" id="p1" name="pref"><label for="p1">Palm Jumeirah</label>
+            <input type="checkbox" id="p2" name="pref"><label for="p2">Downtown</label>
+            <input type="checkbox" id="p3" name="pref"><label for="p3">Dubai Marina</label>
+            <input type="checkbox" id="p4" name="pref"><label for="p4">Emirates Hills</label>
+          </div>
+        </div>
+        <div class="f full"><label for="f-msg">Message</label><textarea id="f-msg" name="message" placeholder="Tell us about the home you have in mind…"></textarea></div>
+        <div class="full consent"><input type="checkbox" id="f-consent"><label for="f-consent">I'd like to receive occasional private-listing updates. (Demo only — nothing is stored.)</label></div>
+      </div>
+      <div class="form-actions">
+        <button class="btn btn-dark" type="submit">Send enquiry
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></button>
+      </div>
+      <div class="form-msg" id="form-msg" role="status" aria-live="polite">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16v.5"/></svg>
+        <div><strong>Thank you.</strong> This is a concept demo — no data is sent. Like what you see? <a href="https://asthaventures.in/#global" target="_top" style="color:var(--sand-deep);font-weight:600">Astha Ventures can build yours →</a></div>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-about">
+        <a href="#top" class="brand" aria-label="Meridian Estates home">
+          <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><rect x=".75" y=".75" width="38.5" height="38.5" fill="none" stroke="#C8A97E" stroke-width="1.2"/><path d="M9 31V11l11 11 11-11v20" fill="none" stroke="#E7D6B8" stroke-width="1.6"/><path d="M20 22v9" stroke="#C8A97E" stroke-width="1.2"/></svg>
+          <span class="brand-name">Meridian<small>Estates · Dubai</small></span>
+        </a>
+        <p>Private property advisory for international buyers across Palm Jumeirah, Downtown, Dubai Marina and Emirates Hills.</p>
+        <div class="social">
+          <a href="#top" aria-label="Instagram (demo)"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/></svg></a>
+          <a href="#top" aria-label="LinkedIn (demo)"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 10v7M8 7v.5M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg></a>
+          <a href="#top" aria-label="YouTube (demo)"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l5 3-5 3z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul><li><a href="#properties">Featured properties</a></li><li><a href="#neighbourhoods">Neighbourhoods</a></li><li><a href="#why-dubai">Why Dubai</a></li><li><a href="#approach">Our approach</a></li></ul>
+      </div>
+      <div>
+        <h4>Districts</h4>
+        <ul><li><a href="#neighbourhoods">Palm Jumeirah</a></li><li><a href="#neighbourhoods">Downtown Dubai</a></li><li><a href="#neighbourhoods">Dubai Marina</a></li><li><a href="#neighbourhoods">Emirates Hills</a></li></ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul><li><a href="tel:+97140000000">+971 4 000 0000</a></li><li><a href="mailto:hello@meridian.example">hello@meridian.example</a></li><li>Suite 000, Example Tower<br>Dubai, UAE (fictional)</li></ul>
+      </div>
+    </div>
+    <div class="footer-big" aria-hidden="true">MERIDIAN</div>
+    <div class="footer-bottom">
+      <span>© <span id="yr">2026</span> Meridian Estates — a fictional brand.</span>
+      <span>Concept design &amp; build by <a href="https://asthaventures.in/#global" target="_top">Astha Ventures</a></span>
+    </div>
+    <p class="disclaimer">This website is a design concept created by Astha Ventures to demonstrate its web design capabilities. Meridian Estates, its properties, prices and contact details are fictional. Nothing on this page is an offer, advertisement or advice, and no information submitted is collected or transmitted.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+  var root = document.documentElement;
+  root.classList.add('js');
+
+  var header = document.querySelector('.site-header');
+  var burger = document.querySelector('.burger');
+  var menu = document.getElementById('mobile-menu');
+
+  function setMenu(open){
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    menu.classList.toggle('open', open);
+  }
+  burger.addEventListener('click', function(){ setMenu(burger.getAttribute('aria-expanded') !== 'true'); });
+  menu.addEventListener('click', function(e){ if (e.target.closest('a')) setMenu(false); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') setMenu(false); });
+  window.addEventListener('resize', function(){ if (window.innerWidth > 1020) setMenu(false); });
+
+  function onScroll(){ header.classList.toggle('scrolled', window.scrollY > 20); }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  // Scroll reveal
+  var reveals = document.querySelectorAll('.reveal');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) {
+    reveals.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, {rootMargin:'0px 0px -8% 0px', threshold:0.08});
+    reveals.forEach(function(el){ io.observe(el); });
+  }
+
+  // Property filters
+  var chips = document.querySelectorAll('.chip');
+  var cards = document.querySelectorAll('.card');
+  var count = document.getElementById('count');
+  function applyFilter(type){
+    var n = 0;
+    chips.forEach(function(c){ c.setAttribute('aria-pressed', c.dataset.filter === type ? 'true' : 'false'); });
+    cards.forEach(function(card){
+      var show = type === 'all' || card.dataset.type === type;
+      card.classList.toggle('is-hidden', !show);
+      if (show) { n++; card.classList.add('in'); }
+    });
+    count.textContent = n;
+  }
+  chips.forEach(function(c){ c.addEventListener('click', function(){ applyFilter(c.dataset.filter); }); });
+
+  // Favourites
+  document.querySelectorAll('.fav').forEach(function(b){
+    b.addEventListener('click', function(){
+      b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+    });
+  });
+
+  // Hero search (visual only)
+  var search = document.getElementById('search');
+  var note = document.getElementById('search-note');
+  search.addEventListener('submit', function(e){
+    e.preventDefault();
+    var type = document.getElementById('s-type').value;
+    applyFilter(type);
+    note.textContent = 'Concept demo — showing sample listings below.';
+    document.getElementById('properties').scrollIntoView({behavior: reduce ? 'auto' : 'smooth'});
+  });
+
+  // Enquiry form (no data sent)
+  var form = document.getElementById('enquiry-form');
+  var msg = document.getElementById('form-msg');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    msg.classList.add('show');
+    form.reset();
+  });
+
+  var yr = document.getElementById('yr');
+  if (yr) yr.textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
