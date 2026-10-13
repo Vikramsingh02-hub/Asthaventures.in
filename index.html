@@ -12,7 +12,7 @@
 <meta property="og:title" content="Astha Ventures | Grow • Manage • Scale"/>
 <meta property="og:description" content="Built on trust. Driven by growth. One accountable partner for marketing, finance, technology and strategy — helping businesses grow with confidence."/>
 <meta property="og:url" content="https://asthaventures.in"/>
-<meta property="og:image" content="https://asthaventures.in/og-image.jpg"/>
+<meta property="og:image" content="https://asthaventures.in/og-image.png"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
 <meta property="og:image:alt" content="Astha Ventures — Grow, Manage, Scale"/>
@@ -23,7 +23,8 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Astha Ventures | Grow • Manage • Scale"/>
 <meta name="twitter:description" content="Built on trust. Driven by growth. Business advisory and growth services for ambitious Indian businesses."/>
-<meta name="twitter:image" content="https://asthaventures.in/og-image.jpg"/>
+<meta name="twitter:image" content="https://asthaventures.in/og-image.png"/>
+<link rel="manifest" href="/site.webmanifest"/>
 <meta name="twitter:image:alt" content="Astha Ventures — Grow, Manage, Scale"/>
 <meta name="robots" content="index,follow"/>
 <meta name="theme-color" content="#0D1B3D"/>
@@ -40,7 +41,7 @@
   "@type": "Organization",
   "name": "Astha Ventures",
   "url": "https://asthaventures.in",
-  "logo": "https://asthaventures.in/favicon.png",
+  "logo": "https://asthaventures.in/icon-512.png",
   "description": "Astha Ventures brings marketing, finance, technology and strategy under one roof to help businesses grow with confidence.",
   "slogan": "Grow • Manage • Scale",
   "foundingDate": "2021",
@@ -586,6 +587,11 @@ body.has-cursor .cursor-ring,body.has-cursor .cursor-dot{opacity:1}
 .t3d-dot{width:22px;height:3px;border:none;padding:0;background:rgba(201,162,39,.25);transition:all .35s}
 .t3d-dot.active{width:44px;background:var(--gold)}
 
+/* Keep decorative 3D elements (tilted marquee, side carousel cards) from widening
+   the page on phones — that pushed the fixed WhatsApp button off-screen. */
+#page-home{overflow:hidden}
+.testimonials-section{overflow:hidden}
+
 /* Centred section header */
 .section-header.center{text-align:center}
 .section-header.center p{margin-left:auto;margin-right:auto}
@@ -612,6 +618,15 @@ body.has-cursor .cursor-ring,body.has-cursor .cursor-dot{opacity:1}
 .global-regions{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
 .global-regions span{padding:5px 12px;border:1px solid rgba(201,162,39,.25);color:rgba(248,248,246,.75);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase}
 .global-ctas{display:flex;gap:12px;flex-wrap:wrap}
+.tz{display:flex;align-items:center;gap:14px;padding:16px 18px;border:1px solid rgba(201,162,39,.2);background:rgba(8,14,32,.35);margin-bottom:10px}
+.tz-col{flex:1;display:flex;flex-direction:column;min-width:0}
+.tz-lbl{font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(201,162,39,.75);font-weight:700}
+.tz-time{font-family:'Playfair Display',serif;font-size:1.45rem;font-weight:700;color:#F8F8F6;line-height:1.25}
+.tz-city{font-size:.7rem;color:rgba(248,248,246,.45);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tz-sep{color:var(--gold);font-size:1.1rem}
+.tz-status{font-size:.78rem;color:rgba(248,248,246,.7);margin-bottom:22px;display:flex;align-items:center;gap:8px}
+.tz-status::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--gold);flex-shrink:0;animation:goldPulse 2s infinite}
+.tz-status.online::before{background:#25D366}
 .global-note{margin-top:16px;font-size:.74rem;color:rgba(248,248,246,.42)}
 .contact-global-note{margin:-6px 0 28px;padding:14px 18px;border-left:2px solid var(--gold);background:rgba(201,162,39,.06);font-size:.84rem;color:var(--gray);line-height:1.65}
 body.dark .global-section{background:#0D1426}
@@ -902,6 +917,12 @@ body.dark .global-lead,body.dark .global-point p,body.dark .contact-global-note{
           <div class="global-regions">
             <span>USA</span><span>UK</span><span>Canada</span><span>Europe</span><span>UAE &amp; Gulf</span><span>Australia</span><span>Singapore</span>
           </div>
+          <div class="tz" id="tz">
+            <div class="tz-col"><span class="tz-lbl">Your time</span><span class="tz-time" id="tz-you">—</span><span class="tz-city" id="tz-you-zone"></span></div>
+            <div class="tz-sep" aria-hidden="true">⇄</div>
+            <div class="tz-col"><span class="tz-lbl">Our studio</span><span class="tz-time" id="tz-us">—</span><span class="tz-city">Lucknow · IST</span></div>
+          </div>
+          <p class="tz-status" id="tz-status"></p>
           <div class="global-ctas">
             <button class="btn-gold" onclick="showPage('contact')">Request a Proposal</button>
             <a class="btn-outline" href="https://wa.me/919696997188?text=Hi%20Astha%20Ventures%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener">WhatsApp Us</a>
@@ -1934,8 +1955,8 @@ body.dark .global-lead,body.dark .global-point p,body.dark .contact-global-note{
                 </div>
                 <div class="form-row">
                   <div>
-                    <label class="form-label" for="f-phone">Phone *</label>
-                    <input class="form-input" type="tel" id="f-phone" name="phone" placeholder="With country code, e.g. +1, +44, +91" required autocomplete="tel"/>
+                    <label class="form-label" for="f-phone">Phone / WhatsApp</label>
+                    <input class="form-input" type="tel" id="f-phone" name="phone" placeholder="Optional — with country code, e.g. +1, +44" autocomplete="tel"/>
                   </div>
                   <div>
                     <label class="form-label" for="f-email">Email *</label>
@@ -2299,7 +2320,7 @@ async function submitForm(event) {
   var email = document.getElementById('f-email').value.trim();
   var message = document.getElementById('f-message').value.trim();
 
-  if (!name || !phone || !email || !message) {
+  if (!name || !email || !message) {
     alert('Please fill in all required fields.');
     return false;
   }
@@ -2740,6 +2761,40 @@ function initHero3D() {
   s.async = true;
   s.onload = initHero3D;
   document.body.appendChild(s);
+})();
+
+// ── Time-zone panel: visitor's local time vs. our studio in Lucknow ──
+(function initTimeZones() {
+  var you = document.getElementById('tz-you');
+  if (!you) return;
+  var STUDIO_TZ = 'Asia/Kolkata';
+  var visitorTz = (Intl.DateTimeFormat().resolvedOptions().timeZone) || '';
+  var fmt = function(tz) {
+    try { return new Intl.DateTimeFormat('en-US', { hour: 'numeric', minute: '2-digit', timeZone: tz || undefined }).format(new Date()); }
+    catch (e) { return new Date().toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }); }
+  };
+  var studioParts = function() {
+    var p = {};
+    new Intl.DateTimeFormat('en-US', { hour: 'numeric', hour12: false, weekday: 'short', timeZone: STUDIO_TZ })
+      .formatToParts(new Date()).forEach(function(x) { p[x.type] = x.value; });
+    return { hour: parseInt(p.hour, 10) % 24, day: p.weekday };
+  };
+  // Visitors already on IST would just see two identical clocks — show only the status line.
+  if (visitorTz === 'Asia/Kolkata' || visitorTz === 'Asia/Calcutta') document.getElementById('tz').style.display = 'none';
+  document.getElementById('tz-you-zone').textContent = visitorTz ? visitorTz.replace(/_/g, ' ').split('/').pop() : 'Local time';
+  var status = document.getElementById('tz-status');
+  function tick() {
+    you.textContent = fmt(visitorTz);
+    document.getElementById('tz-us').textContent = fmt(STUDIO_TZ);
+    var s = studioParts();
+    var open = s.day !== 'Sun' && s.hour >= 10 && s.hour < 19;
+    status.classList.toggle('online', open);
+    status.textContent = open
+      ? "We're in the studio now — expect a reply within hours."
+      : "Message us now — you'll have a reply by your morning.";
+  }
+  tick();
+  setInterval(tick, 30000);
 })();
 
 // ── Re-run effects when the SPA switches pages ──
