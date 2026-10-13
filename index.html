@@ -57,6 +57,18 @@
   "sameAs": []
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "How do payments work?", "acceptedAnswer": {"@type": "Answer", "text": "Every project has a fixed price agreed upfront. Typically 50% starts the work and 50% is due at launch; retainers are billed monthly. We invoice in your currency and accept secure international payments."}},
+    {"@type": "Question", "name": "We're in a different time zone — how does communication work?", "acceptedAnswer": {"@type": "Answer", "text": "We schedule calls in your business hours and send written updates every week. Because we work while you sleep, you'll usually wake up to progress, previews or answers waiting for you."}},
+    {"@type": "Question", "name": "Who owns the website and accounts?", "acceptedAnswer": {"@type": "Answer", "text": "You do — 100%. All code, designs, domains, ad accounts and content are handed over to you. We're happy to sign an NDA before you share anything sensitive."}},
+    {"@type": "Question", "name": "How long does a website take?", "acceptedAnswer": {"@type": "Answer", "text": "A Launch Website usually takes 2–3 weeks and a Business Website 3–5 weeks, depending on how quickly content and feedback come in."}}
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet"/>
@@ -592,6 +604,104 @@ body.has-cursor .cursor-ring,body.has-cursor .cursor-dot{opacity:1}
 #page-home{overflow:hidden}
 .testimonials-section{overflow:hidden}
 
+/* Concept showcase */
+.showcase-section{padding:96px 0;background:var(--warm-white)}
+.showcase-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.show-card{display:flex;flex-direction:column;background:#fff;border:1px solid rgba(201,162,39,.15);overflow:hidden;transition:border-color .3s,box-shadow .3s}
+.show-card:hover{border-color:rgba(201,162,39,.45);box-shadow:0 24px 50px rgba(13,27,61,.12)}
+.show-frame{background:#0b1430;padding:0 0 0;border-bottom:1px solid rgba(201,162,39,.15)}
+.show-bar{display:flex;align-items:center;gap:6px;padding:9px 12px;background:#101c3d}
+.show-bar i{width:8px;height:8px;border-radius:50%;background:rgba(248,248,246,.18)}
+.show-bar span{margin-left:10px;font-size:.66rem;color:rgba(248,248,246,.45);background:rgba(255,255,255,.05);padding:3px 10px;border-radius:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.show-view{position:relative;aspect-ratio:16/11;overflow:hidden;background:#fff}
+.show-view iframe{position:absolute;top:0;left:0;width:1440px;height:990px;border:0;transform-origin:0 0;transform:scale(var(--s,.25));pointer-events:none}
+.show-meta{padding:24px 26px 26px;display:flex;flex-direction:column;flex:1}
+.show-tag{font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-muted);margin-bottom:8px}
+.show-meta h3{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--navy);margin-bottom:8px}
+.show-meta p{font-size:.85rem;color:var(--gray);line-height:1.65;flex:1}
+.show-meta .card-link{margin-top:16px}
+.showcase-note{text-align:center;font-size:.8rem;color:var(--gray-light);margin-top:28px}
+body.dark .showcase-section{background:#0A0F1E}
+body.dark .show-card{background:#111827}
+body.dark .show-meta h3{color:#EDEDEB}
+
+/* Process */
+.process-section{padding:96px 0;background:#EFEDE6}
+.flow{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:18px;counter-reset:none;position:relative}
+.flow::before{content:'';position:absolute;top:27px;left:6%;right:6%;height:1px;background:linear-gradient(90deg,transparent,rgba(201,162,39,.5),transparent)}
+.flow-step{position:relative;text-align:center;padding:0 6px}
+.flow-num{display:inline-flex;align-items:center;justify-content:center;width:54px;height:54px;border-radius:50%;background:var(--navy);color:var(--gold);font-family:'Playfair Display',serif;font-weight:700;margin-bottom:18px;box-shadow:0 0 0 6px #EFEDE6;position:relative}
+.flow-step h4{font-size:.95rem;font-weight:600;color:var(--navy);margin-bottom:6px}
+.flow-step p{font-size:.82rem;color:var(--gray);line-height:1.6}
+body.dark .process-section{background:#0D1426}
+body.dark .flow-num{box-shadow:0 0 0 6px #0D1426}
+body.dark .flow-step h4{color:#EDEDEB}
+
+/* Pricing */
+.pricing-section{padding:96px 0}
+.pricing-header{text-align:center;margin-bottom:34px}
+.pricing-header h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.75rem);font-weight:700;color:#F8F8F6;margin-bottom:12px}
+.pricing-header p{color:rgba(248,248,246,.55);font-size:.95rem;margin-bottom:14px}
+.cur-switch{display:inline-flex;flex-wrap:wrap;justify-content:center;border:1px solid rgba(201,162,39,.25)}
+.cur-switch button{background:none;border:none;color:rgba(248,248,246,.6);font-size:.72rem;font-weight:700;letter-spacing:.08em;padding:8px 14px;transition:all .2s}
+.cur-switch button:hover{color:#F8F8F6}
+.cur-switch button.active{background:var(--gold);color:var(--navy)}
+.founding{display:flex;align-items:center;gap:18px;max-width:820px;margin:0 auto 40px;padding:16px 22px;border:1px dashed rgba(201,162,39,.5);background:rgba(201,162,39,.06)}
+.founding-badge{flex-shrink:0;background:var(--gold);color:var(--navy);font-size:.66rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:6px 10px}
+.founding p{color:rgba(248,248,246,.75);font-size:.88rem;line-height:1.6}
+.founding strong{color:var(--gold-light)}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
+.plan{position:relative;display:flex;flex-direction:column;padding:36px 30px;border:1px solid rgba(201,162,39,.18);background:rgba(255,255,255,.03)}
+.plan-featured{background:linear-gradient(160deg,#172c5c,#0e1a3a);border-color:var(--gold);box-shadow:0 30px 60px rgba(0,0,0,.3)}
+.plan-ribbon{position:absolute;top:-12px;left:30px;background:var(--gold);color:var(--navy);font-size:.64rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:5px 10px}
+.plan h3{font-family:'Playfair Display',serif;font-size:1.35rem;color:#F8F8F6;margin-bottom:6px}
+.plan-for{font-size:.82rem;color:rgba(248,248,246,.5);line-height:1.55;margin-bottom:22px;min-height:2.6em}
+.plan-price{display:flex;align-items:baseline;gap:8px;margin-bottom:24px;flex-wrap:wrap}
+.plan-from{font-size:.72rem;color:rgba(248,248,246,.45);text-transform:uppercase;letter-spacing:.1em}
+.price{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:700;color:var(--gold);line-height:1}
+.plan-per{font-size:.8rem;color:rgba(248,248,246,.5)}
+.plan ul{list-style:none;margin-bottom:28px;flex:1}
+.plan li{position:relative;padding:8px 0 8px 22px;font-size:.86rem;color:rgba(248,248,246,.78);border-bottom:1px solid rgba(201,162,39,.08)}
+.plan li::before{content:'✓';position:absolute;left:0;color:var(--gold);font-weight:700}
+.plan-cta{width:100%;text-align:center}
+.pricing-note{text-align:center;font-size:.76rem;color:rgba(248,248,246,.4);margin-top:28px;line-height:1.6}
+
+/* FAQ */
+.faq-section{padding:96px 0;background:#EFEDE6}
+.faq-inner{max-width:860px}
+.faq-list{display:flex;flex-direction:column;gap:12px}
+.faq{background:#fff;border:1px solid rgba(201,162,39,.15);transition:border-color .25s}
+.faq[open]{border-color:rgba(201,162,39,.45)}
+.faq summary{list-style:none;cursor:pointer;padding:20px 56px 20px 24px;font-weight:600;color:var(--navy);font-size:.95rem;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:'+';position:absolute;right:24px;top:50%;transform:translateY(-50%);font-size:1.4rem;color:var(--gold);transition:transform .25s}
+.faq[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+.faq p{padding:0 24px 22px;color:var(--gray);font-size:.88rem;line-height:1.75}
+body.dark .faq-section{background:#0D1426}
+body.dark .faq{background:#111827}
+body.dark .faq summary{color:#EDEDEB}
+
+/* Playbooks (work page) */
+.cases-section .section-header{margin-bottom:44px}
+.case-card .svc-bullets{margin-top:0}
+.case-challenge strong{color:var(--navy);font-weight:600}
+body.dark .case-challenge strong{color:#EDEDEB}
+
+@media(max-width:1000px){
+  .showcase-grid{grid-template-columns:1fr 1fr}
+  .flow{grid-template-columns:1fr 1fr;row-gap:32px}
+  .flow::before{display:none}
+  .plans{grid-template-columns:1fr;max-width:480px;margin:0 auto}
+}
+@media(max-width:640px){
+  .showcase-grid{grid-template-columns:1fr}
+  .flow{grid-template-columns:1fr}
+  .flow-step{text-align:left;display:grid;grid-template-columns:54px 1fr;column-gap:16px}
+  .flow-num{grid-row:span 2;margin-bottom:0}
+  .founding{flex-direction:column;align-items:flex-start}
+  .cases-grid{grid-template-columns:1fr}
+}
+
 /* Centred section header */
 .section-header.center{text-align:center}
 .section-header.center p{margin-left:auto;margin-right:auto}
@@ -701,6 +811,7 @@ body.dark .global-lead,body.dark .global-point p,body.dark .contact-global-note{
       <button class="nav-link" id="nl-about" onclick="showPage('about')">About</button>
       <button class="nav-link" id="nl-services" onclick="showPage('services')">Services</button>
       <button class="nav-link" id="nl-work" onclick="showPage('work')">Work</button>
+      <button class="nav-link" id="nl-pricing" onclick="goToSection('pricing')">Pricing</button>
       <button class="nav-link" id="nl-contact" onclick="showPage('contact')">Contact</button>
     </nav>
     <div class="nav-actions">
@@ -717,6 +828,7 @@ body.dark .global-lead,body.dark .global-point p,body.dark .contact-global-note{
       <button class="mobile-nav-link" id="mnl-about" onclick="showPage('about');toggleMobile()">About</button>
       <button class="mobile-nav-link" id="mnl-services" onclick="showPage('services');toggleMobile()">Services</button>
       <button class="mobile-nav-link" id="mnl-work" onclick="showPage('work');toggleMobile()">Work</button>
+      <button class="mobile-nav-link" id="mnl-pricing" onclick="goToSection('pricing');toggleMobile()">Pricing</button>
       <button class="mobile-nav-link" id="mnl-contact" onclick="showPage('contact');toggleMobile()">Contact</button>
       <button class="btn-gold" style="margin-top:16px;width:100%;font-size:.8rem" onclick="showPage('contact');toggleMobile()">Book Consultation</button>
     </div>
@@ -763,16 +875,16 @@ body.dark .global-lead,body.dark .global-point p,body.dark .contact-global-note{
       </div>
       <div class="hero-stats reveal delay-5">
         <div class="hero-stat">
-          <div class="hero-stat-val" data-count="150" data-suffix="+">0</div>
-          <div class="hero-stat-label">Businesses Served</div>
+          <div class="hero-stat-val" data-count="24" data-suffix="h">0</div>
+          <div class="hero-stat-label">Proposal Turnaround</div>
         </div>
         <div class="hero-stat">
-          <div class="hero-stat-val">₹12Cr+</div>
-          <div class="hero-stat-label">Revenue Influenced</div>
+          <div class="hero-stat-val">2021</div>
+          <div class="hero-stat-label">Established</div>
         </div>
         <div class="hero-stat">
-          <div class="hero-stat-val" data-count="98" data-suffix="%">0</div>
-          <div class="hero-stat-label">Retention Rate</div>
+          <div class="hero-stat-val" data-count="100" data-suffix="%">0</div>
+          <div class="hero-stat-label">Code &amp; IP Ownership</div>
         </div>
       </div>
     </div>
@@ -933,6 +1045,114 @@ body.dark .global-lead,body.dark .global-point p,body.dark .contact-global-note{
     </div>
   </section>
 
+  <!-- Concept showcase -->
+  <section class="showcase-section" id="showcase" hidden>
+    <div class="section-inner">
+      <div class="section-header center reveal">
+        <span class="gold-rule center"></span>
+        <h2>See what we build.</h2>
+        <p>Fully working concept websites designed and built by our studio for fictional brands — so you can judge our craft before you hire us. Click any project to explore it live.</p>
+      </div>
+      <div class="showcase-grid">
+          <a class="show-card reveal delay-1" href="demos/realestate.html" target="_blank" rel="noopener">
+            <div class="show-frame"><div class="show-bar"><i></i><i></i><i></i><span>meridian-estates.example</span></div><div class="show-view"><iframe src="demos/realestate.html" loading="lazy" tabindex="-1" aria-hidden="true" title="Meridian Estates concept preview"></iframe></div></div>
+            <div class="show-meta"><span class="show-tag">Concept · Real Estate · Dubai</span><h3>Meridian Estates</h3><p>Luxury brokerage website with property listings, neighbourhood guides and investor enquiries.</p><span class="card-link">View live demo <span>→</span></span></div>
+          </a>
+          <a class="show-card reveal delay-2" href="demos/saas.html" target="_blank" rel="noopener">
+            <div class="show-frame"><div class="show-bar"><i></i><i></i><i></i><span>flowpilot.example</span></div><div class="show-view"><iframe src="demos/saas.html" loading="lazy" tabindex="-1" aria-hidden="true" title="Flowpilot concept preview"></iframe></div></div>
+            <div class="show-meta"><span class="show-tag">Concept · B2B SaaS · London</span><h3>Flowpilot</h3><p>Product-led SaaS landing page with interactive pricing, product UI and conversion-focused flow.</p><span class="card-link">View live demo <span>→</span></span></div>
+          </a>
+          <a class="show-card reveal delay-3" href="demos/clinic.html" target="_blank" rel="noopener">
+            <div class="show-frame"><div class="show-bar"><i></i><i></i><i></i><span>brightwell-dental.example</span></div><div class="show-view"><iframe src="demos/clinic.html" loading="lazy" tabindex="-1" aria-hidden="true" title="Brightwell Dental concept preview"></iframe></div></div>
+            <div class="show-meta"><span class="show-tag">Concept · Healthcare · Austin, TX</span><h3>Brightwell Dental Studio</h3><p>Patient-friendly practice website with an interactive appointment-booking flow.</p><span class="card-link">View live demo <span>→</span></span></div>
+          </a>
+      </div>
+      <p class="showcase-note reveal">Concept projects for fictional brands, created to demonstrate our design and development standards. And yes — the site you're on right now is ours too.</p>
+    </div>
+  </section>
+
+  <!-- How we work -->
+  <section class="process-section">
+    <div class="section-inner">
+      <div class="section-header center reveal">
+        <span class="gold-rule center"></span>
+        <h2>From first call to launch.</h2>
+        <p>A clear, predictable process — wherever you are in the world.</p>
+      </div>
+      <ol class="flow">
+        <li class="flow-step reveal delay-1"><span class="flow-num">01</span><h4>Discovery call</h4><p>30 minutes on Zoom, Google Meet or WhatsApp, scheduled in your time zone.</p></li>
+        <li class="flow-step reveal delay-2"><span class="flow-num">02</span><h4>Proposal in 24 hours</h4><p>Clear scope, timeline and a fixed price in your currency. No hourly billing.</p></li>
+        <li class="flow-step reveal delay-3"><span class="flow-num">03</span><h4>Design preview</h4><p>See and approve your homepage design before a single line of code is written.</p></li>
+        <li class="flow-step reveal delay-4"><span class="flow-num">04</span><h4>Build &amp; refine</h4><p>Weekly progress updates, staging previews and included feedback rounds.</p></li>
+        <li class="flow-step reveal delay-5"><span class="flow-num">05</span><h4>Launch &amp; handover</h4><p>We go live, then hand over all code, logins and a walkthrough. It's all yours.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="pricing-section navy-bg" id="pricing">
+    <div class="section-inner">
+      <div class="pricing-header reveal">
+        <span class="gold-rule center"></span>
+        <h2>Simple, transparent pricing.</h2>
+        <p>Fixed quotes. No hourly surprises. Prices shown in</p>
+        <div class="cur-switch" role="group" aria-label="Currency">
+          <button data-cur="USD">USD</button><button data-cur="GBP">GBP</button><button data-cur="EUR">EUR</button><button data-cur="AUD">AUD</button><button data-cur="AED">AED</button><button data-cur="INR">INR</button>
+        </div>
+      </div>
+      <div class="founding reveal">
+        <div class="founding-badge">Founding Client Program</div>
+        <p><strong>25% off any plan for our first 10 clients</strong> — in exchange for an honest review and permission to feature your project in our portfolio.</p>
+      </div>
+      <div class="plans">
+        <div class="plan reveal delay-1">
+          <h3>Launch Website</h3>
+          <p class="plan-for">For new businesses that need a professional presence, fast.</p>
+          <div class="plan-price"><span class="plan-from">from</span><span class="price" data-plan="launch">$499</span><span class="plan-per">one-time</span></div>
+          <ul>
+            <li>Up to 5 custom-designed pages</li>
+            <li>Mobile-first, fast and secure</li>
+            <li>On-page SEO &amp; analytics setup</li>
+            <li>Contact form &amp; WhatsApp integration</li>
+            <li>2 rounds of revisions</li>
+            <li>Delivered in 2–3 weeks</li>
+          </ul>
+          <button class="btn-outline plan-cta" onclick="showPage('contact')">Get Started</button>
+        </div>
+        <div class="plan plan-featured reveal delay-2">
+          <div class="plan-ribbon">Most popular</div>
+          <h3>Business Website</h3>
+          <p class="plan-for">For growing companies that want a site that sells.</p>
+          <div class="plan-price"><span class="plan-from">from</span><span class="price" data-plan="business">$1,499</span><span class="plan-per">one-time</span></div>
+          <ul>
+            <li>Up to 12 pages, fully custom design</li>
+            <li>Premium animations &amp; interactions</li>
+            <li>Blog / CMS you can edit yourself</li>
+            <li>AI chatbot &amp; CRM integration</li>
+            <li>Conversion-focused copy support</li>
+            <li>3 rounds of revisions · 3–5 weeks</li>
+          </ul>
+          <button class="btn-gold plan-cta" onclick="showPage('contact')">Get Started</button>
+        </div>
+        <div class="plan reveal delay-3">
+          <h3>Growth Partner</h3>
+          <p class="plan-for">Ongoing marketing for steady, compounding growth.</p>
+          <div class="plan-price"><span class="plan-from">from</span><span class="price" data-plan="growth">$799</span><span class="plan-per">/ month</span></div>
+          <ul>
+            <li>Social media content &amp; management</li>
+            <li>Google &amp; Meta ads management</li>
+            <li>Website care, updates &amp; hosting</li>
+            <li>Monthly performance report</li>
+            <li>Monthly strategy call</li>
+            <li>Cancel anytime after 3 months</li>
+          </ul>
+          <button class="btn-outline plan-cta" onclick="showPage('contact')">Get Started</button>
+        </div>
+      </div>
+      <p class="pricing-note reveal">Final quote depends on scope. Ad spend and third-party subscriptions are billed at cost. Milestone payments: 50% to start, 50% on launch.</p>
+    </div>
+  </section>
+
   <!-- Why Astha -->
   <section class="why-section">
     <div class="section-inner">
@@ -1043,8 +1263,8 @@ body.dark .global-lead,body.dark .global-point p,body.dark .contact-global-note{
     </div>
   </section>
 
-  <!-- Testimonials (3D carousel) -->
-  <section class="testimonials-section navy-bg">
+  <!-- Testimonials (3D carousel) — hidden until real client reviews arrive. Replace the quotes, then remove `hidden`. -->
+  <section class="testimonials-section navy-bg" hidden>
     <div class="section-inner">
       <div class="testimonials-header reveal">
         <span class="gold-rule center"></span>
@@ -1140,25 +1360,45 @@ body.dark .global-lead,body.dark .global-point p,body.dark .contact-global-note{
     <div class="section-inner">
       <div class="stats-header reveal">
         <span class="gold-rule center"></span>
-        <h2>Results across industries.</h2>
+        <h2>Accountability you can measure.</h2>
       </div>
       <div class="stats-grid">
         <div class="stat-cell reveal">
-          <div class="stat-num" data-count="150" data-suffix="+">0</div>
-          <div class="stat-lbl">Businesses Served</div>
-        </div>
-        <div class="stat-cell reveal delay-1">
-          <div class="stat-num" data-count="420" data-suffix="+">0</div>
-          <div class="stat-lbl">Campaigns Managed</div>
-        </div>
-        <div class="stat-cell reveal delay-2">
           <div class="stat-num">2021</div>
           <div class="stat-lbl">Established</div>
         </div>
-        <div class="stat-cell reveal delay-3">
-          <div class="stat-num">₹12Cr+</div>
-          <div class="stat-lbl">Revenue Influenced</div>
+        <div class="stat-cell reveal delay-1">
+          <div class="stat-num" data-count="24" data-suffix="h">0</div>
+          <div class="stat-lbl">Proposal Turnaround</div>
         </div>
+        <div class="stat-cell reveal delay-2">
+          <div class="stat-num" data-count="6">0</div>
+          <div class="stat-lbl">Disciplines, One Team</div>
+        </div>
+        <div class="stat-cell reveal delay-3">
+          <div class="stat-num" data-count="100" data-suffix="%">0</div>
+          <div class="stat-lbl">Code &amp; IP Ownership</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section" id="faq">
+    <div class="section-inner faq-inner">
+      <div class="section-header center reveal">
+        <span class="gold-rule center"></span>
+        <h2>Questions, answered.</h2>
+        <p>Everything clients usually ask before working with a studio in another country.</p>
+      </div>
+      <div class="faq-list">
+        <details class="faq reveal"><summary>How do payments work?</summary><p>Every project has a fixed price agreed upfront. Typically 50% starts the work and 50% is due at launch; retainers are billed monthly. We invoice in your currency and accept secure international payments.</p></details>
+        <details class="faq reveal"><summary>We're in a different time zone — how does communication work?</summary><p>We schedule calls in your business hours and send written updates every week. Because we work while you sleep, you'll usually wake up to progress, previews or answers waiting for you.</p></details>
+        <details class="faq reveal"><summary>Who owns the website and accounts?</summary><p>You do — 100%. All code, designs, domains, ad accounts and content are handed over to you. We're happy to sign an NDA before you share anything sensitive.</p></details>
+        <details class="faq reveal"><summary>How long does a website take?</summary><p>A Launch Website usually takes 2–3 weeks and a Business Website 3–5 weeks, depending on how quickly content and feedback come in. You'll see a design preview before we start building.</p></details>
+        <details class="faq reveal"><summary>What if I don't like the design?</summary><p>Revision rounds are included in every plan, and you approve the homepage design before development begins — so there are no surprises at the end.</p></details>
+        <details class="faq reveal"><summary>Can you work with my existing website or team?</summary><p>Yes. We can redesign, rebuild or improve an existing site, and work alongside your in-house team or other agencies on marketing and ads.</p></details>
+        <details class="faq reveal"><summary>You're a young studio — why should we trust you?</summary><p>Fair question. Start with a small fixed-price scope, see the design before we build, and pay in milestones. Our Founding Client Program also gives you a discount for being an early partner.</p></details>
       </div>
     </div>
   </section>
@@ -1218,7 +1458,7 @@ body.dark .global-lead,body.dark .global-point p,body.dark .contact-global-note{
           </div>
           <div class="timeline-item reveal delay-3">
             <div class="timeline-connector"><div class="timeline-year">2023</div><div class="timeline-line"></div></div>
-            <p class="timeline-text">Launched the Business Advisory practice. Crossed 50 active client relationships.</p>
+            <p class="timeline-text">Launched the Business Advisory practice to help owners plan growth, not just marketing.</p>
           </div>
           <div class="timeline-item reveal delay-4">
             <div class="timeline-connector"><div class="timeline-year">2024</div><div class="timeline-line"></div></div>
@@ -1226,7 +1466,7 @@ body.dark .global-lead,body.dark .global-point p,body.dark .contact-global-note{
           </div>
           <div class="timeline-item reveal delay-5">
             <div class="timeline-connector"><div class="timeline-year">2025</div><div class="timeline-line"></div></div>
-            <p class="timeline-text">150+ businesses served. Deepened focus on long-term retainer relationships over project work.</p>
+            <p class="timeline-text">Built out our web development and automation studio, and opened up to clients worldwide.</p>
           </div>
           <div class="timeline-item reveal" style="transition-delay:.55s">
             <div class="timeline-connector"><div class="timeline-year">2026</div></div>
@@ -1665,195 +1905,111 @@ body.dark .global-lead,body.dark .global-point p,body.dark .contact-global-note{
   <section class="work-hero navy-bg">
     <div class="section-inner">
       <div style="margin-bottom:18px"><span class="tag-pill">Our Work</span></div>
-      <h1 class="reveal delay-1">Results across Indian businesses.</h1>
-      <p class="reveal delay-2">These are representative engagements. Clients are referenced by category and size to protect business confidentiality.</p>
+      <h1 class="reveal delay-1">How we work with your industry.</h1>
+      <p class="reveal delay-2">Every engagement is tailored, but these playbooks show where we typically start — and what we focus on first.</p>
     </div>
   </section>
 
-  <div class="case-filter">
-    <div class="case-filter-inner">
-      <button class="filter-btn active" onclick="filterCases('all',this)">All</button>
-      <button class="filter-btn" onclick="filterCases('Restaurant',this)">Restaurant</button>
-      <button class="filter-btn" onclick="filterCases('Wedding Venue',this)">Wedding Venue</button>
-      <button class="filter-btn" onclick="filterCases('Retail',this)">Retail</button>
-      <button class="filter-btn" onclick="filterCases('Startup',this)">Startup</button>
-      <button class="filter-btn" onclick="filterCases('Hospitality',this)">Hospitality</button>
-      <button class="filter-btn" onclick="filterCases('MSME',this)">MSME</button>
+  <section class="showcase-section" hidden>
+    <div class="section-inner">
+      <div class="showcase-grid">
+          <a class="show-card reveal delay-1" href="demos/realestate.html" target="_blank" rel="noopener">
+            <div class="show-frame"><div class="show-bar"><i></i><i></i><i></i><span>meridian-estates.example</span></div><div class="show-view"><iframe src="demos/realestate.html" loading="lazy" tabindex="-1" aria-hidden="true" title="Meridian Estates concept preview"></iframe></div></div>
+            <div class="show-meta"><span class="show-tag">Concept · Real Estate · Dubai</span><h3>Meridian Estates</h3><p>Luxury brokerage website with property listings, neighbourhood guides and investor enquiries.</p><span class="card-link">View live demo <span>→</span></span></div>
+          </a>
+          <a class="show-card reveal delay-2" href="demos/saas.html" target="_blank" rel="noopener">
+            <div class="show-frame"><div class="show-bar"><i></i><i></i><i></i><span>flowpilot.example</span></div><div class="show-view"><iframe src="demos/saas.html" loading="lazy" tabindex="-1" aria-hidden="true" title="Flowpilot concept preview"></iframe></div></div>
+            <div class="show-meta"><span class="show-tag">Concept · B2B SaaS · London</span><h3>Flowpilot</h3><p>Product-led SaaS landing page with interactive pricing, product UI and conversion-focused flow.</p><span class="card-link">View live demo <span>→</span></span></div>
+          </a>
+          <a class="show-card reveal delay-3" href="demos/clinic.html" target="_blank" rel="noopener">
+            <div class="show-frame"><div class="show-bar"><i></i><i></i><i></i><span>brightwell-dental.example</span></div><div class="show-view"><iframe src="demos/clinic.html" loading="lazy" tabindex="-1" aria-hidden="true" title="Brightwell Dental concept preview"></iframe></div></div>
+            <div class="show-meta"><span class="show-tag">Concept · Healthcare · Austin, TX</span><h3>Brightwell Dental Studio</h3><p>Patient-friendly practice website with an interactive appointment-booking flow.</p><span class="card-link">View live demo <span>→</span></span></div>
+          </a>
+      </div>
+      <p class="showcase-note reveal">Concept projects for fictional brands, created to demonstrate our design and development standards.</p>
     </div>
-  </div>
+  </section>
 
   <section class="cases-section">
     <div class="section-inner">
+      <div class="section-header center reveal">
+        <span class="gold-rule center"></span>
+        <h2>How we'd approach your industry.</h2>
+        <p>Every engagement is tailored, but these playbooks show where we typically start.</p>
+      </div>
       <div class="cases-grid" id="cases-grid">
-
-        <div class="case-card reveal" data-cat="Restaurant">
+        <div class="case-card reveal">
           <div class="case-card-head">
-            <div class="case-meta"><span class="case-cat">Restaurant</span><span class="case-dur">6 months</span></div>
-            <div class="case-client">North Indian Dining Group</div>
-            <div class="case-loc">Jaipur, Rajasthan</div>
-            <p class="case-challenge">A 3-outlet restaurant chain with strong walk-in traffic but no digital presence. The owner had tried social media through two agencies over 18 months with no measurable outcome. GST compliance was 3 months behind.</p>
+            <div class="case-meta"><span class="case-cat">Real Estate</span><span class="case-dur">4–6 weeks</span></div>
+            <div class="case-client">Brokerages &amp; developers</div>
+            <p class="case-challenge"><strong>Typical challenge:</strong> Listings live on portals the agency doesn't control, and serious buyers can't tell one broker from another.</p>
           </div>
           <div class="case-results">
-            <span class="case-results-label">Key Results</span>
-            <div class="case-metrics">
-              <div><div class="case-metric-val">4.2×</div><div class="case-metric-desc">increase in online table reservations over 4 months</div></div>
-              <div><div class="case-metric-val">₹0</div><div class="case-metric-desc">in late filing penalties after compliance handover</div></div>
-              <div><div class="case-metric-val">68%</div><div class="case-metric-desc">growth in Instagram following with verified local audience</div></div>
-              <div><div class="case-metric-val">2.8×</div><div class="case-metric-desc">ROAS on paid media in month 3 vs month 1</div></div>
-            </div>
+            <span class="case-results-label">How we approach it</span>
+            <ul class="svc-bullets"><li><span>—</span>Premium listings website with area guides</li><li><span>—</span>Lead capture routed straight to WhatsApp &amp; CRM</li><li><span>—</span>Meta &amp; Google campaigns targeting overseas investors</li><li><span>—</span>Monthly content on market insights</li></ul>
           </div>
-          <div class="case-footer">
-            <div class="case-services"><span class="case-svc-tag">Social Media</span><span class="case-svc-tag">GST &amp; Accounting</span><span class="case-svc-tag">Performance Marketing</span></div>
-            <button class="case-expand-btn" onclick="toggleCase(this)">Read Full Case ↓</button>
-            <div class="case-expanded">
-              <span class="expanded-label">Full Challenge</span>
-              <p class="expanded-text">A 3-outlet restaurant chain with strong walk-in traffic but no digital presence. The owner had tried social media through two agencies over 18 months with no measurable outcome. GST compliance was 3 months behind.</p>
-              <span class="expanded-label">What We Did</span>
-              <p class="expanded-text">We took over social media management and GST compliance simultaneously. Built a content system based on the restaurant's actual food and dining experience. Cleaned up 3 months of GST backlog in 6 weeks. Launched a Meta ads campaign targeting dining occasions in the catchment area.</p>
-            </div>
-          </div>
+          <div class="case-footer"><div class="case-services"><span class="case-svc-tag">AI Website</span><span class="case-svc-tag">Performance Marketing</span><span class="case-svc-tag">Social Media</span></div></div>
         </div>
-
-        <div class="case-card reveal delay-1" data-cat="Wedding Venue">
+        <div class="case-card reveal delay-1">
           <div class="case-card-head">
-            <div class="case-meta"><span class="case-cat">Wedding Venue</span><span class="case-dur">5 months</span></div>
-            <div class="case-client">Heritage Banquet &amp; Events</div>
-            <div class="case-loc">Lucknow, Uttar Pradesh</div>
-            <p class="case-challenge">A 200-capacity banquet hall with strong word-of-mouth but losing bookings to competitors with stronger digital presence. No structured marketing. Owner was managing WhatsApp inquiries personally and losing track of follow-ups.</p>
+            <div class="case-meta"><span class="case-cat">Healthcare</span><span class="case-dur">3–5 weeks</span></div>
+            <div class="case-client">Clinics &amp; private practices</div>
+            <p class="case-challenge"><strong>Typical challenge:</strong> Patients compare clinics online in seconds, and phone-only booking loses them after hours.</p>
           </div>
           <div class="case-results">
-            <span class="case-results-label">Key Results</span>
-            <div class="case-metrics">
-              <div><div class="case-metric-val">3.1×</div><div class="case-metric-desc">increase in inbound booking inquiries</div></div>
-              <div><div class="case-metric-val">88%</div><div class="case-metric-desc">improvement in inquiry response time</div></div>
-              <div><div class="case-metric-val">₹18L</div><div class="case-metric-desc">in bookings attributed to influencer campaign directly</div></div>
-              <div><div class="case-metric-val">22%</div><div class="case-metric-desc">increase in off-season occupancy through repriced packages</div></div>
-            </div>
+            <span class="case-results-label">How we approach it</span>
+            <ul class="svc-bullets"><li><span>—</span>Calm, trustworthy website built around booking</li><li><span>—</span>Online appointment requests &amp; reminders</li><li><span>—</span>Local SEO and Google Business Profile optimisation</li><li><span>—</span>Review-generation workflow after each visit</li></ul>
           </div>
-          <div class="case-footer">
-            <div class="case-services"><span class="case-svc-tag">Social Media</span><span class="case-svc-tag">Influencer Marketing</span><span class="case-svc-tag">Business Advisory</span></div>
-            <button class="case-expand-btn" onclick="toggleCase(this)">Read Full Case ↓</button>
-            <div class="case-expanded">
-              <span class="expanded-label">Full Challenge</span>
-              <p class="expanded-text">A 200-capacity banquet hall with strong word-of-mouth but losing bookings to competitors with stronger digital presence. No structured marketing. Owner was managing WhatsApp inquiries personally and losing track of follow-ups.</p>
-              <span class="expanded-label">What We Did</span>
-              <p class="expanded-text">Developed a content strategy positioning the venue as a premium heritage property. Ran an influencer campaign with 6 wedding content creators in the region. Set up a WhatsApp Business workflow to systematise inquiry handling. Provided business advisory on pricing strategy for off-season packages.</p>
-            </div>
-          </div>
+          <div class="case-footer"><div class="case-services"><span class="case-svc-tag">AI Website</span><span class="case-svc-tag">Automation</span><span class="case-svc-tag">Local SEO</span></div></div>
         </div>
-
-        <div class="case-card reveal delay-2" data-cat="Retail">
+        <div class="case-card reveal delay-2">
           <div class="case-card-head">
-            <div class="case-meta"><span class="case-cat">Retail</span><span class="case-dur">8 months (ongoing)</span></div>
-            <div class="case-client">Fashion Retail Chain</div>
-            <div class="case-loc">Lucknow &amp; Kanpur, UP</div>
-            <p class="case-challenge">A family-owned apparel brand with 5 stores looking to scale digital sales. Existing Meta ad account had ₹2.4L in spend over 6 months with no attribution. GST input tax credit was not being claimed correctly, resulting in significant leakage.</p>
+            <div class="case-meta"><span class="case-cat">Startups &amp; SaaS</span><span class="case-dur">3–5 weeks</span></div>
+            <div class="case-client">Product-led startups</div>
+            <p class="case-challenge"><strong>Typical challenge:</strong> Founders are busy building product; the website undersells it and doesn't convert visitors into demos.</p>
           </div>
           <div class="case-results">
-            <span class="case-results-label">Key Results</span>
-            <div class="case-metrics">
-              <div><div class="case-metric-val">₹3.8L</div><div class="case-metric-desc">in ITC recovered in first quarter</div></div>
-              <div><div class="case-metric-val">4.7×</div><div class="case-metric-desc">ROAS on Meta ads in first 90 days after rebuild</div></div>
-              <div><div class="case-metric-val">2.2×</div><div class="case-metric-desc">increase in online-to-store footfall</div></div>
-              <div><div class="case-metric-val">31%</div><div class="case-metric-desc">reduction in marketing cost per acquisition</div></div>
-            </div>
+            <span class="case-results-label">How we approach it</span>
+            <ul class="svc-bullets"><li><span>—</span>Conversion-focused landing page &amp; pricing</li><li><span>—</span>Product UI storytelling and clear calls to action</li><li><span>—</span>LinkedIn &amp; Google demand generation</li><li><span>—</span>Analytics to track sign-ups and demo requests</li></ul>
           </div>
-          <div class="case-footer">
-            <div class="case-services"><span class="case-svc-tag">Performance Marketing</span><span class="case-svc-tag">GST &amp; Accounting</span><span class="case-svc-tag">Social Media</span></div>
-            <button class="case-expand-btn" onclick="toggleCase(this)">Read Full Case ↓</button>
-            <div class="case-expanded">
-              <span class="expanded-label">Full Challenge</span>
-              <p class="expanded-text">A family-owned apparel brand with 5 stores looking to scale digital sales. Existing Meta ad account had ₹2.4L in spend over 6 months with no attribution. GST ITC was not being claimed correctly, resulting in significant leakage.</p>
-              <span class="expanded-label">What We Did</span>
-              <p class="expanded-text">Rebuilt the Meta ad account from scratch with correct pixel implementation and attribution windows. Corrected ITC reconciliation process, recovering unclaimed credits. Launched Google Shopping campaigns for the e-commerce SKU catalogue. Developed a seasonal content calendar aligned to inventory cycles.</p>
-            </div>
-          </div>
+          <div class="case-footer"><div class="case-services"><span class="case-svc-tag">AI Website</span><span class="case-svc-tag">Performance Marketing</span><span class="case-svc-tag">Business Advisory</span></div></div>
         </div>
-
-        <div class="case-card reveal" data-cat="Startup">
+        <div class="case-card reveal">
           <div class="case-card-head">
-            <div class="case-meta"><span class="case-cat">Startup</span><span class="case-dur">6 months (ongoing)</span></div>
-            <div class="case-client">B2B SaaS Startup</div>
-            <div class="case-loc">Noida, Uttar Pradesh</div>
-            <p class="case-challenge">An early-stage SaaS startup serving MSMEs with no structured go-to-market strategy. Founders were managing marketing themselves while also building the product. No clear view of CAC or LTV.</p>
+            <div class="case-meta"><span class="case-cat">Hospitality</span><span class="case-dur">3–4 weeks</span></div>
+            <div class="case-client">Hotels, cafés &amp; restaurants</div>
+            <p class="case-challenge"><strong>Typical challenge:</strong> Booking platforms take a large commission on every reservation and own the guest relationship.</p>
           </div>
           <div class="case-results">
-            <span class="case-results-label">Key Results</span>
-            <div class="case-metrics">
-              <div><div class="case-metric-val">3×</div><div class="case-metric-desc">increase in inbound demo requests over 3 months</div></div>
-              <div><div class="case-metric-val">₹0</div><div class="case-metric-desc">GST compliance errors in months following handover</div></div>
-              <div><div class="case-metric-val">44%</div><div class="case-metric-desc">reduction in CAC through improved targeting</div></div>
-              <div><div class="case-metric-val">28%</div><div class="case-metric-desc">increase in trial-to-paid conversion after pricing restructure</div></div>
-            </div>
+            <span class="case-results-label">How we approach it</span>
+            <ul class="svc-bullets"><li><span>—</span>Experience-led website with direct booking</li><li><span>—</span>Instagram content built around the guest experience</li><li><span>—</span>Creator and influencer partnerships</li><li><span>—</span>Offers and campaigns that drive repeat visits</li></ul>
           </div>
-          <div class="case-footer">
-            <div class="case-services"><span class="case-svc-tag">Social Media</span><span class="case-svc-tag">GST &amp; Accounting</span><span class="case-svc-tag">Business Advisory</span></div>
-            <button class="case-expand-btn" onclick="toggleCase(this)">Read Full Case ↓</button>
-            <div class="case-expanded">
-              <span class="expanded-label">Full Challenge</span>
-              <p class="expanded-text">An early-stage SaaS startup serving MSMEs with no structured go-to-market strategy. Founders managing marketing while also building the product. No clear view of CAC or LTV. GST compliance had errors from the first month of registration.</p>
-              <span class="expanded-label">What We Did</span>
-              <p class="expanded-text">Conducted a 2-week business diagnostic. Built a content and inbound marketing strategy targeting MSME decision-makers on LinkedIn. Corrected GST filings and set up clean accounting for monthly management reports. Provided advisory on pricing model and customer segmentation.</p>
-            </div>
-          </div>
+          <div class="case-footer"><div class="case-services"><span class="case-svc-tag">Social Media</span><span class="case-svc-tag">Influencer Marketing</span><span class="case-svc-tag">AI Website</span></div></div>
         </div>
-
-        <div class="case-card reveal delay-1" data-cat="Hospitality">
+        <div class="case-card reveal delay-1">
           <div class="case-card-head">
-            <div class="case-meta"><span class="case-cat">Hospitality</span><span class="case-dur">7 months</span></div>
-            <div class="case-client">Boutique Hotel Group</div>
-            <div class="case-loc">Varanasi &amp; Agra, UP</div>
-            <p class="case-challenge">A 2-property boutique hotel brand with 80% OTA-driven bookings and thin margins. Owner wanted to build direct booking capability but had no digital marketing infrastructure.</p>
+            <div class="case-meta"><span class="case-cat">Retail &amp; E-commerce</span><span class="case-dur">4–6 weeks</span></div>
+            <div class="case-client">Brands selling online</div>
+            <p class="case-challenge"><strong>Typical challenge:</strong> Ad spend keeps rising while there's no clear view of which campaigns actually produce sales.</p>
           </div>
           <div class="case-results">
-            <span class="case-results-label">Key Results</span>
-            <div class="case-metrics">
-              <div><div class="case-metric-val">19%</div><div class="case-metric-desc">shift from OTA to direct bookings over 6 months</div></div>
-              <div><div class="case-metric-val">3.4×</div><div class="case-metric-desc">ROAS on direct booking Meta campaigns</div></div>
-              <div><div class="case-metric-val">₹22L</div><div class="case-metric-desc">in attributable revenue from influencer partnerships</div></div>
-              <div><div class="case-metric-val">8.2%</div><div class="case-metric-desc">improvement in net margin from reduced OTA dependency</div></div>
-            </div>
+            <span class="case-results-label">How we approach it</span>
+            <ul class="svc-bullets"><li><span>—</span>Fast storefront with optimised product pages</li><li><span>—</span>Meta &amp; Google Shopping with proper tracking</li><li><span>—</span>Email and WhatsApp flows for abandoned carts</li><li><span>—</span>Monthly reporting tied to revenue, not likes</li></ul>
           </div>
-          <div class="case-footer">
-            <div class="case-services"><span class="case-svc-tag">Social Media</span><span class="case-svc-tag">Influencer Marketing</span><span class="case-svc-tag">Performance Marketing</span><span class="case-svc-tag">GST &amp; Accounting</span></div>
-            <button class="case-expand-btn" onclick="toggleCase(this)">Read Full Case ↓</button>
-            <div class="case-expanded">
-              <span class="expanded-label">Full Challenge</span>
-              <p class="expanded-text">A 2-property boutique hotel brand competing against OTA-dependent competitors. Bookings were 80% OTA-driven with thin margins. Owner wanted to build direct booking capability but had no digital marketing infrastructure.</p>
-              <span class="expanded-label">What We Did</span>
-              <p class="expanded-text">Built an Instagram and Google presence around the travel experience rather than room rates. Ran a targeted Meta campaign for direct bookings. Partnered with 8 travel influencers in the heritage and experiential travel segment. Set up hospitality accounting to track RevPAR and channel-wise contribution margins.</p>
-            </div>
-          </div>
+          <div class="case-footer"><div class="case-services"><span class="case-svc-tag">Performance Marketing</span><span class="case-svc-tag">AI Website</span><span class="case-svc-tag">Automation</span></div></div>
         </div>
-
-        <div class="case-card reveal delay-2" data-cat="MSME">
+        <div class="case-card reveal delay-2">
           <div class="case-card-head">
-            <div class="case-meta"><span class="case-cat">MSME</span><span class="case-dur">5 months (ongoing)</span></div>
-            <div class="case-client">Industrial Packaging Manufacturer</div>
-            <div class="case-loc">Kanpur, Uttar Pradesh</div>
-            <p class="case-challenge">A 12-year-old B2B manufacturer with a strong product but no digital presence and no structured sales process. New customer acquisition had stalled for 2 years.</p>
+            <div class="case-meta"><span class="case-cat">Professional Services</span><span class="case-dur">3–4 weeks</span></div>
+            <div class="case-client">Consultants, firms &amp; B2B</div>
+            <p class="case-challenge"><strong>Typical challenge:</strong> Most new business still comes from referrals because the website doesn't build credibility on its own.</p>
           </div>
           <div class="case-results">
-            <span class="case-results-label">Key Results</span>
-            <div class="case-metrics">
-              <div><div class="case-metric-val">6</div><div class="case-metric-desc">new B2B relationships initiated through digital in 4 months</div></div>
-              <div><div class="case-metric-val">₹46L</div><div class="case-metric-desc">in pipeline value from inbound digital leads</div></div>
-              <div><div class="case-metric-val">140%</div><div class="case-metric-desc">increase in website traffic from target industries</div></div>
-              <div><div class="case-metric-val">1</div><div class="case-metric-desc">dedicated inside sales hire made, supported by our advisory</div></div>
-            </div>
+            <span class="case-results-label">How we approach it</span>
+            <ul class="svc-bullets"><li><span>—</span>Authority-building website &amp; service pages</li><li><span>—</span>LinkedIn content and thought leadership</li><li><span>—</span>Lead magnets and automated follow-up</li><li><span>—</span>Clear positioning against competitors</li></ul>
           </div>
-          <div class="case-footer">
-            <div class="case-services"><span class="case-svc-tag">Social Media</span><span class="case-svc-tag">Performance Marketing</span><span class="case-svc-tag">Business Advisory</span></div>
-            <button class="case-expand-btn" onclick="toggleCase(this)">Read Full Case ↓</button>
-            <div class="case-expanded">
-              <span class="expanded-label">Full Challenge</span>
-              <p class="expanded-text">A 12-year-old B2B manufacturer with a strong product but no digital presence and no structured sales process. The owner was doing all business development through personal relationships. New customer acquisition had stalled for 2 years.</p>
-              <span class="expanded-label">What We Did</span>
-              <p class="expanded-text">Developed a LinkedIn and Google presence targeting procurement managers in their category. Created educational content around packaging compliance and cost optimisation. Provided advisory on structuring a basic inside sales function alongside the marketing work.</p>
-            </div>
-          </div>
+          <div class="case-footer"><div class="case-services"><span class="case-svc-tag">AI Website</span><span class="case-svc-tag">Social Media</span><span class="case-svc-tag">Business Advisory</span></div></div>
         </div>
-
       </div>
     </div>
   </section>
@@ -1862,8 +2018,8 @@ body.dark .global-lead,body.dark .global-point p,body.dark .contact-global-note{
     <div class="section-inner">
       <div class="work-note-grid">
         <div class="work-note-text">
-          <span class="section-label">A Note on Results</span>
-          <p>The metrics shown reflect specific client contexts. Results vary based on industry, starting baseline, market conditions, and the scope of engagement. We do not make performance guarantees. What we commit to is documented effort, transparent reporting, and accountability for the process.</p>
+          <span class="section-label">Our Commitment</span>
+          <p>Results always depend on industry, starting point, market conditions and scope. We don't promise overnight miracles. What we commit to is documented effort, transparent weekly reporting, and full accountability for the process.</p>
         </div>
         <div class="work-note-cta">
           <h2 class="font-display" style="font-family:'Playfair Display',serif;font-size:clamp(1.4rem,2.5vw,2rem);font-weight:700;color:#F8F8F6;margin-bottom:14px">Discuss your business with us.</h2>
@@ -2420,7 +2576,7 @@ document.getElementById('footer-year').textContent = new Date().getFullYear();
 // ── Split headings into words for the perspective reveal ──
 var SPLIT_SEL = '.hero h1, .section-header h2, .why-left h2, .whychoose-header h2, .industries-header h2, ' +
   '.testimonials-header h2, .stats-header h2, .cta-section h2, .about-hero h1, .services-hero h1, ' +
-  '.work-hero h1, .contact-hero h1, .founder-text h2, .founder-content h2, .cta-band-text h3, .svc-cta h2, .global-left h2';
+  '.work-hero h1, .contact-hero h1, .founder-text h2, .founder-content h2, .cta-band-text h3, .svc-cta h2, .global-left h2, .pricing-header h2';
 
 function splitHeadings() {
   document.querySelectorAll(SPLIT_SEL).forEach(function(h) {
@@ -2452,7 +2608,7 @@ function splitHeadings() {
 splitHeadings();
 
 // ── 3D tilt with glare ──
-var TILT_SEL = '.service-card-home, .wc-card, .case-card, .why-item, .ind-card, .mv-card, .value-card, .founder-photo-inner, .outcome-card, .global-card';
+var TILT_SEL = '.service-card-home, .wc-card, .case-card, .why-item, .ind-card, .mv-card, .value-card, .founder-photo-inner, .outcome-card, .global-card, .show-card, .plan';
 
 function initTilt() {
   if (!FINE_POINTER || REDUCED) return;
@@ -2797,6 +2953,57 @@ function initHero3D() {
   setInterval(tick, 30000);
 })();
 
+// ── Showcase: scale the live demo iframes to fit their preview frames ──
+function fitShowcase() {
+  document.querySelectorAll('.show-view').forEach(function(v) {
+    if (v.clientWidth) v.style.setProperty('--s', (v.clientWidth / 1440).toFixed(4));
+  });
+}
+window.addEventListener('resize', fitShowcase);
+fitShowcase();
+
+// ── Pricing: currency switcher (auto-picks from the visitor's time zone) ──
+(function initPricing() {
+  var PRICES = {
+    USD: { launch: '$499',    business: '$1,499',  growth: '$799' },
+    GBP: { launch: '£399',    business: '£1,199',  growth: '£649' },
+    EUR: { launch: '€459',    business: '€1,399',  growth: '€749' },
+    AUD: { launch: 'A$799',   business: 'A$2,299', growth: 'A$1,249' },
+    AED: { launch: 'AED 1,849', business: 'AED 5,499', growth: 'AED 2,949' },
+    INR: { launch: '₹19,999', business: '₹59,999', growth: '₹29,999' }
+  };
+  var btns = document.querySelectorAll('.cur-switch button');
+  if (!btns.length) return;
+  function setCur(cur) {
+    document.querySelectorAll('.price[data-plan]').forEach(function(el) {
+      el.textContent = PRICES[cur][el.getAttribute('data-plan')];
+    });
+    btns.forEach(function(b) {
+      var on = b.getAttribute('data-cur') === cur;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+  }
+  var tz = (Intl.DateTimeFormat().resolvedOptions().timeZone) || '';
+  var guess = /^Asia\/(Kolkata|Calcutta)$/.test(tz) ? 'INR'
+    : tz === 'Europe/London' ? 'GBP'
+    : /^Europe\//.test(tz) ? 'EUR'
+    : /^Australia\//.test(tz) ? 'AUD'
+    : /^Asia\/(Dubai|Muscat|Qatar|Bahrain|Riyadh|Kuwait)$/.test(tz) ? 'AED'
+    : 'USD';
+  btns.forEach(function(b) { b.addEventListener('click', function() { setCur(b.getAttribute('data-cur')); }); });
+  setCur(guess);
+})();
+
+// ── Jump to a section on the home page (used by the Pricing nav link) ──
+function goToSection(id) {
+  if (currentPage !== 'home') showPage('home');
+  setTimeout(function() {
+    var el = document.getElementById(id);
+    if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 72, behavior: 'smooth' });
+  }, currentPage === 'home' ? 0 : 450);
+}
+
 // ── Re-run effects when the SPA switches pages ──
 var _showPage = showPage;
 showPage = function(pageId) {
@@ -2804,6 +3011,7 @@ showPage = function(pageId) {
   setTimeout(function() {
     initTilt();
     initMagnetic();
+    fitShowcase();
     if (pageId === 'home') { hero3dLayout(); t3dRender(); }
   }, 100);
 };
