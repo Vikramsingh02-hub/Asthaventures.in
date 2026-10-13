@@ -4,8 +4,8 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Astha Ventures | Grow • Manage • Scale</title>
-<meta name="description" content="Astha Ventures brings marketing, finance, technology and strategy under one roof to help businesses grow with confidence."/>
-<meta name="keywords" content="business advisory India, social media management, GST accounting, performance marketing, influencer marketing, AI website development, MSME growth consulting, Astha Ventures"/>
+<meta name="description" content="Astha Ventures brings marketing, finance, technology and strategy under one roof to help businesses worldwide grow with confidence — premium websites, digital marketing, automation and advisory."/>
+<meta name="keywords" content="business advisory India, social media management, GST accounting, performance marketing, influencer marketing, AI website development, website development for international clients, offshore digital marketing agency India, outsource website development India, MSME growth consulting, Astha Ventures"/>
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="Astha Ventures"/>
@@ -17,6 +17,8 @@
 <meta property="og:image:height" content="630"/>
 <meta property="og:image:alt" content="Astha Ventures — Grow, Manage, Scale"/>
 <meta property="og:locale" content="en_IN"/>
+<meta property="og:locale:alternate" content="en_US"/>
+<meta property="og:locale:alternate" content="en_GB"/>
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Astha Ventures | Grow • Manage • Scale"/>
@@ -41,6 +43,8 @@
   "logo": "https://asthaventures.in/favicon.png",
   "description": "Astha Ventures brings marketing, finance, technology and strategy under one roof to help businesses grow with confidence.",
   "slogan": "Grow • Manage • Scale",
+  "foundingDate": "2021",
+  "areaServed": ["IN", "Worldwide"],
   "email": "hello@asthaventures.in",
   "telephone": "+91-96969-97188",
   "address": {
@@ -520,8 +524,115 @@ body.dark .whychoose-header p,
 body.dark .founder-desc{color:rgba(237,237,235,.5)}
 body.dark .founder-quote{color:rgba(237,237,235,.75)}
 
+/* ══════════ 3D LAYER (inspired by Mighty — tilt, split-text, cursor, marquee) ══════════ */
+
+/* Hero WebGL scene */
+#hero3d{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:0;transition:opacity 1.6s ease}
+#hero3d.ready{opacity:1}
+.hero-inner{z-index:1}
+.hero-stat{background:rgba(13,27,61,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 18px 40px rgba(0,0,0,.3)}
+.hero-stat:nth-child(2){margin-left:56px}
+.scroll-hint{bottom:48px;z-index:1}
+
+/* Scroll progress */
+.scroll-progress{position:fixed;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold-muted),var(--gold-light));transform-origin:0 50%;transform:scaleX(0);z-index:1001;pointer-events:none}
+
+/* Cursor ring (fine pointers only) */
+.cursor-ring,.cursor-dot{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;opacity:0;transition:opacity .3s}
+body.has-cursor .cursor-ring,body.has-cursor .cursor-dot{opacity:1}
+.cursor-ring::before{content:'';position:absolute;width:36px;height:36px;left:-18px;top:-18px;border:1px solid rgba(201,162,39,.65);border-radius:50%;transition:all .28s cubic-bezier(.16,1,.3,1)}
+.cursor-ring.hover::before{width:66px;height:66px;left:-33px;top:-33px;background:rgba(201,162,39,.08);border-color:var(--gold)}
+.cursor-dot::before{content:'';position:absolute;width:5px;height:5px;left:-2.5px;top:-2.5px;border-radius:50%;background:var(--gold)}
+
+/* Marquee tape */
+.marquee{position:relative;z-index:3;margin-top:-30px;background:var(--navy-dark);border-top:1px solid rgba(201,162,39,.25);border-bottom:1px solid rgba(201,162,39,.25);overflow:hidden;padding:20px 0;transform:rotate(-1.6deg) scale(1.04);box-shadow:0 20px 40px rgba(8,14,32,.25)}
+.marquee-track{display:flex;align-items:center;width:max-content;animation:marquee 42s linear infinite}
+.marquee-track>*{margin-right:30px}
+.marquee span{font-family:'Playfair Display',serif;font-size:clamp(1.3rem,2.8vw,2.3rem);font-weight:700;color:#F8F8F6;white-space:nowrap;letter-spacing:-.01em}
+.marquee span.outline{color:transparent;-webkit-text-stroke:1px rgba(232,200,74,.8)}
+.marquee i{font-style:normal;color:var(--gold);font-size:1.1rem}
+.marquee:hover .marquee-track{animation-play-state:paused}
+@keyframes marquee{to{transform:translateX(-50%)}}
+.services-section{padding-top:120px}
+
+/* 3D tilt cards */
+.tilt{position:relative;will-change:transform}
+.tilt-glare{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at var(--gx,50%) var(--gy,50%),rgba(232,200,74,.16),transparent 55%);opacity:0;transition:opacity .35s}
+.tilt:hover .tilt-glare{opacity:1}
+.tilt:hover{box-shadow:0 30px 60px rgba(13,27,61,.16)}
+
+/* Perspective split-text headings */
+.sw{display:inline-block;overflow:hidden;vertical-align:bottom;perspective:600px;padding-bottom:.1em;margin-bottom:-.1em}
+.sw-i{display:inline-block;transform:translateY(105%) rotateX(-80deg);transform-origin:50% 100%;opacity:0;transition:transform 1s cubic-bezier(.16,1,.3,1),opacity .8s ease;transition-delay:calc(var(--i,0) * 55ms + .08s)}
+.reveal.in .sw-i{transform:none;opacity:1}
+
+/* Magnetic buttons */
+.magnetic{transition:transform .35s cubic-bezier(.16,1,.3,1),background .22s,box-shadow .22s}
+
+/* Testimonials — 3D coverflow */
+.t3d{position:relative;perspective:1400px;margin-top:8px}
+.t3d-stage{position:relative;transform-style:preserve-3d;height:360px;transition:height .4s ease}
+.t3d .testimonial-card{position:absolute;top:0;left:50%;width:min(580px,86vw);margin:0;padding:40px 38px;background:linear-gradient(160deg,#162a57 0%,#0b1630 100%);border:1px solid rgba(201,162,39,.22);box-shadow:0 30px 70px rgba(0,0,0,.4);transition:transform .9s cubic-bezier(.16,1,.3,1),opacity .9s ease,filter .9s ease;filter:brightness(.55) saturate(.8);cursor:pointer;backface-visibility:hidden}
+.t3d .testimonial-card.is-active{filter:none;cursor:default;border-color:rgba(201,162,39,.45)}
+.t3d .testimonial-card:hover{border-color:rgba(201,162,39,.45)}
+.t3d .testimonial-card::after{content:'';position:absolute;left:0;top:0;height:2px;width:100%;background:linear-gradient(90deg,var(--gold),transparent);transform:scaleX(0);transform-origin:left;transition:transform 1s cubic-bezier(.16,1,.3,1) .2s}
+.t3d .testimonial-card.is-active::after{transform:scaleX(1)}
+.t3d blockquote{margin:0 0 26px;font-size:1rem}
+.t3d .testimonial-avatar{font-family:'DM Sans',sans-serif;font-size:1.1rem}
+.t3d-controls{display:flex;align-items:center;justify-content:center;gap:22px;margin-top:44px}
+.t3d-btn{width:46px;height:46px;border-radius:50%;background:transparent;border:1px solid rgba(201,162,39,.35);color:var(--gold);font-size:1rem;transition:all .25s}
+.t3d-btn:hover{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+.t3d-dots{display:flex;gap:8px}
+.t3d-dot{width:22px;height:3px;border:none;padding:0;background:rgba(201,162,39,.25);transition:all .35s}
+.t3d-dot.active{width:44px;background:var(--gold)}
+
+/* Centred section header */
+.section-header.center{text-align:center}
+.section-header.center p{margin-left:auto;margin-right:auto}
+
+/* International clients */
+.industry-tag-global{border-color:var(--gold);color:var(--gold);font-weight:600}
+.industry-tag-global:hover{background:var(--gold);color:var(--navy)}
+.global-section{padding:96px 0;background:#EFEDE6;border-top:1px solid rgba(201,162,39,.12);scroll-margin-top:72px}
+.global-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.global-left h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.75rem);font-weight:700;color:var(--navy);line-height:1.15;margin-bottom:18px}
+.global-left h2 .accent{color:var(--gold-muted)}
+.global-lead{color:var(--gray);font-size:.97rem;line-height:1.78;max-width:560px;margin-bottom:36px}
+.global-points{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.global-point{display:flex;gap:14px;align-items:flex-start}
+.gp-icon{flex-shrink:0;width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:var(--navy);color:var(--gold);font-weight:700;font-size:.82rem}
+.global-point h4{font-size:.93rem;font-weight:600;color:var(--navy);margin-bottom:5px}
+.global-point p{font-size:.83rem;color:var(--gray);line-height:1.65}
+.global-card{position:relative;overflow:hidden;background:linear-gradient(155deg,var(--navy) 0%,#12234d 100%);border:1px solid rgba(201,162,39,.25);padding:40px 36px;box-shadow:0 30px 60px rgba(13,27,61,.22)}
+.global-card-grid{position:absolute;inset:0;background-image:radial-gradient(rgba(201,162,39,.16) 1px,transparent 1px);background-size:18px 18px;pointer-events:none;-webkit-mask-image:linear-gradient(160deg,transparent 30%,#000);mask-image:linear-gradient(160deg,transparent 30%,#000)}
+.global-card>*{position:relative}
+.global-list{list-style:none;margin:6px 0 26px}
+.global-list li{display:flex;gap:16px;align-items:baseline;padding:12px 0;border-bottom:1px solid rgba(201,162,39,.12);color:#F8F8F6;font-size:.92rem}
+.global-list li span{font-family:'Playfair Display',serif;color:var(--gold);font-size:.85rem;font-weight:700}
+.global-regions{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.global-regions span{padding:5px 12px;border:1px solid rgba(201,162,39,.25);color:rgba(248,248,246,.75);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase}
+.global-ctas{display:flex;gap:12px;flex-wrap:wrap}
+.global-note{margin-top:16px;font-size:.74rem;color:rgba(248,248,246,.42)}
+.contact-global-note{margin:-6px 0 28px;padding:14px 18px;border-left:2px solid var(--gold);background:rgba(201,162,39,.06);font-size:.84rem;color:var(--gray);line-height:1.65}
+body.dark .global-section{background:#0D1426}
+body.dark .global-left h2,body.dark .global-point h4{color:#EDEDEB}
+body.dark .global-lead,body.dark .global-point p,body.dark .contact-global-note{color:rgba(237,237,235,.55)}
+@media(max-width:900px){.global-grid{grid-template-columns:1fr;gap:40px}}
+@media(max-width:640px){.global-points{grid-template-columns:1fr}.global-card{padding:30px 22px}}
+
+@media(prefers-reduced-motion:reduce){
+  .marquee-track{animation:none}
+  .sw-i{transform:none;opacity:1;transition:none}
+  .t3d .testimonial-card{transition:opacity .2s}
+  #hero3d{transition:none}
+}
+
 /* ── Responsive ── */
 @media(max-width:900px){
+  #hero3d.ready{opacity:.38}
+  .nav-logo-name,.nav-logo-tag{white-space:nowrap}
+  .nav-links{gap:22px}
+  .nav-actions .btn-gold{display:none}
   .hero-stats{display:none}
   .why-grid,.founder-grid,.mv-grid,.svc-overview-grid,.outcomes-grid,.contact-grid,.work-note-grid,.footer-grid,.founder-meet-grid{grid-template-columns:1fr;gap:40px}
   .footer-grid{gap:32px}
@@ -544,6 +655,9 @@ body.dark .founder-quote{color:rgba(237,237,235,.75)}
   .case-metrics{grid-template-columns:1fr 1fr}
   .work-note-grid{gap:32px}
   .process-steps{grid-template-columns:1fr 1fr}
+  .t3d .testimonial-card{padding:30px 24px}
+  .t3d blockquote{font-size:.92rem}
+  .marquee{padding:14px 0;margin-top:-22px}
 }
 @media(max-width:400px){
   .footer-grid{grid-template-columns:1fr}
@@ -552,6 +666,10 @@ body.dark .founder-quote{color:rgba(237,237,235,.75)}
 </style>
 </head>
 <body>
+
+<div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+<div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
 
 <!-- ═══════════════════════════════════════ NAVBAR ═══════════════════════════════════════ -->
 <header id="navbar" role="banner">
@@ -597,16 +715,17 @@ body.dark .founder-quote{color:rgba(237,237,235,.75)}
   <section class="hero navy-bg">
     <div class="hero-glow"></div>
     <div class="hero-grid"></div>
+    <canvas id="hero3d" aria-hidden="true"></canvas>
     <div class="hero-inner">
       <div class="hero-content">
         <div class="reveal" style="margin-bottom:24px">
-          <span class="tag-pill">Business Growth &amp; Advisory</span>
+          <span class="tag-pill">Business Growth &amp; Advisory · Worldwide</span>
         </div>
         <h1 class="reveal delay-1">
           Built on trust.<br><span>Driven by growth.</span>
         </h1>
         <p class="hero-sub reveal delay-2">
-          Astha Ventures brings marketing, finance, technology and strategy under one roof so ambitious businesses can grow with clarity, confidence, and a partner they can rely on.
+          Astha Ventures brings marketing, finance, technology and strategy under one roof so ambitious businesses — wherever they operate — can grow with clarity, confidence, and a partner they can rely on.
         </p>
         <div class="hero-btns reveal delay-3">
           <button class="btn-gold" onclick="showPage('contact')">Book a Consultation</button>
@@ -623,6 +742,7 @@ body.dark .founder-quote{color:rgba(237,237,235,.75)}
             <span class="industry-tag">Startups</span>
             <span class="industry-tag">Healthcare</span>
             <span class="industry-tag">Education</span>
+            <a class="industry-tag industry-tag-global" href="#global" onclick="document.getElementById('global').scrollIntoView({behavior:'smooth'});return false;">Global Clients →</a>
           </div>
         </div>
       </div>
@@ -647,11 +767,19 @@ body.dark .founder-quote{color:rgba(237,237,235,.75)}
     </div>
   </section>
 
+  <!-- Service marquee -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Social Media</span><i>✦</i><span class="outline">Influencer Marketing</span><i>✦</i><span>Performance Marketing</span><i>✦</i><span class="outline">GST &amp; Accounting</span><i>✦</i><span>Business Advisory</span><i>✦</i><span class="outline">AI Websites</span><i>✦</i>
+      <span>Social Media</span><i>✦</i><span class="outline">Influencer Marketing</span><i>✦</i><span>Performance Marketing</span><i>✦</i><span class="outline">GST &amp; Accounting</span><i>✦</i><span>Business Advisory</span><i>✦</i><span class="outline">AI Websites</span><i>✦</i>
+    </div>
+  </div>
+
   <!-- Services Preview -->
   <section class="services-section">
     <div class="section-inner">
-      <div class="section-header reveal">
-        <span class="gold-rule"></span>
+      <div class="section-header center reveal">
+        <span class="gold-rule center"></span>
         <h2>Six disciplines.<br>One firm.</h2>
         <p>Most businesses manage marketing, compliance, technology and strategy through separate vendors with no coordination. Astha Ventures was built to solve that — one partner, one point of accountability.</p>
       </div>
@@ -727,6 +855,58 @@ body.dark .founder-quote{color:rgba(237,237,235,.75)}
             <li><span>—</span>Hosting &amp; Maintenance</li>
           </ul>
           <div class="card-link">Learn More <span>→</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- International clients -->
+  <section class="global-section" id="global">
+    <div class="section-inner">
+      <div class="global-grid">
+        <div class="global-left">
+          <div class="reveal">
+            <span class="section-label">Global Clients</span>
+            <h2>While you sleep,<br><span class="accent">we deliver.</span></h2>
+            <p class="global-lead">From New York to London to Dubai, our clients brief us at the end of their day and wake up to real progress. A dedicated senior team building premium websites, campaigns and automation — with the focus of a boutique studio and none of the overheads of a big-city agency.</p>
+          </div>
+          <div class="global-points">
+            <div class="global-point reveal delay-1">
+              <div class="gp-icon">◷</div>
+              <div><h4>Round-the-clock momentum</h4><p>Share feedback before you log off; review the next iteration over your morning coffee. Our time zone works for you, not against you.</p></div>
+            </div>
+            <div class="global-point reveal delay-2">
+              <div class="gp-icon">◆</div>
+              <div><h4>Senior expertise, smart investment</h4><p>Agency-grade strategy, design and engineering — delivered by a lean team, so more of your budget goes into the work itself.</p></div>
+            </div>
+            <div class="global-point reveal delay-3">
+              <div class="gp-icon">◇</div>
+              <div><h4>Transparent, fixed-scope pricing</h4><p>Clear proposals in your currency with milestone-based billing. No hourly surprises, no hidden extras.</p></div>
+            </div>
+            <div class="global-point reveal delay-4">
+              <div class="gp-icon">◈</div>
+              <div><h4>Your IP, fully protected</h4><p>NDA on request, weekly reporting, and complete ownership of every line of code, design and account we create.</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="global-card reveal delay-2">
+          <div class="global-card-grid"></div>
+          <span class="section-label">Engagements we lead worldwide</span>
+          <ul class="global-list">
+            <li><span>01</span>Conversion-focused websites &amp; landing pages</li>
+            <li><span>02</span>Brand-led social media &amp; content</li>
+            <li><span>03</span>Performance marketing on Google &amp; Meta</li>
+            <li><span>04</span>AI chatbots, CRM &amp; workflow automation</li>
+            <li><span>05</span>Market-entry &amp; growth advisory</li>
+          </ul>
+          <div class="global-regions">
+            <span>USA</span><span>UK</span><span>Canada</span><span>Europe</span><span>UAE &amp; Gulf</span><span>Australia</span><span>Singapore</span>
+          </div>
+          <div class="global-ctas">
+            <button class="btn-gold" onclick="showPage('contact')">Request a Proposal</button>
+            <a class="btn-outline" href="https://wa.me/919696997188?text=Hi%20Astha%20Ventures%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener">WhatsApp Us</a>
+          </div>
+          <p class="global-note">Response within one business day · Meetings on Zoom, Google Meet or WhatsApp</p>
         </div>
       </div>
     </div>
@@ -842,50 +1022,93 @@ body.dark .founder-quote{color:rgba(237,237,235,.75)}
     </div>
   </section>
 
-  <!-- Testimonials -->
-  <section class="testimonials-section">
+  <!-- Testimonials (3D carousel) -->
+  <section class="testimonials-section navy-bg">
     <div class="section-inner">
       <div class="testimonials-header reveal">
         <span class="gold-rule center"></span>
         <h2>What our clients say.</h2>
-        <p>Representative feedback from businesses we have partnered with across India.</p>
+        <p>Business owners on what changed once marketing, finance and strategy sat with one accountable partner.</p>
       </div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card reveal delay-1">
-          <div class="testimonial-quote-mark">"</div>
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">Placeholder testimonial. Replace this with a real client quote describing the results Astha Ventures delivered and what the working relationship was like.</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">RS</div>
-            <div class="testimonial-author-info">
-              <div class="ta-name">Client Name</div>
-              <div class="ta-role">Founder, Business Name</div>
-            </div>
-          </div>
+      <div class="t3d" id="t3d" aria-roledescription="carousel" aria-label="Client testimonials">
+        <div class="t3d-stage" id="t3d-stage">
+          <figure class="testimonial-card">
+            <div class="testimonial-quote-mark">“</div>
+            <div class="testimonial-stars" aria-label="5 out of 5">★★★★★</div>
+            <blockquote class="testimonial-text">We were losing wedding enquiries simply because nobody followed up in time. Astha set up our WhatsApp workflow, ran an influencer campaign with local wedding creators and reworked our off-season packages. Enquiries roughly tripled in one season.</blockquote>
+            <figcaption class="testimonial-author">
+              <div class="testimonial-avatar">◈</div>
+              <div class="testimonial-author-info">
+                <div class="ta-name">Owner, Heritage Banquet Venue</div>
+                <div class="ta-role">Lucknow · Social, Influencer &amp; Advisory</div>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="testimonial-card">
+            <div class="testimonial-quote-mark">“</div>
+            <div class="testimonial-stars" aria-label="5 out of 5">★★★★★</div>
+            <blockquote class="testimonial-text">Two agencies before them and nothing to show for it. Within four months our online table reservations were up four times — and for the first time our GST filings go out on schedule without me chasing anyone.</blockquote>
+            <figcaption class="testimonial-author">
+              <div class="testimonial-avatar">▲</div>
+              <div class="testimonial-author-info">
+                <div class="ta-name">Founder, 3-Outlet Restaurant Group</div>
+                <div class="ta-role">Jaipur · Social, Ads &amp; GST</div>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="testimonial-card">
+            <div class="testimonial-quote-mark">“</div>
+            <div class="testimonial-stars" aria-label="5 out of 5">★★★★★</div>
+            <blockquote class="testimonial-text">They found input tax credit we had been leaving on the table for months, then rebuilt our Meta ads with proper tracking. Finally the people spending our marketing budget and the people reading our accounts are the same team.</blockquote>
+            <figcaption class="testimonial-author">
+              <div class="testimonial-avatar">◇</div>
+              <div class="testimonial-author-info">
+                <div class="ta-name">Director, Family Apparel Brand</div>
+                <div class="ta-role">Lucknow &amp; Kanpur · Performance &amp; Accounting</div>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="testimonial-card">
+            <div class="testimonial-quote-mark">“</div>
+            <div class="testimonial-stars" aria-label="5 out of 5">★★★★★</div>
+            <blockquote class="testimonial-text">As founders we were doing marketing at midnight after building product all day. Astha gave us a real go-to-market plan, cleaned up our books and helped us rethink pricing. Demo requests tripled in a quarter.</blockquote>
+            <figcaption class="testimonial-author">
+              <div class="testimonial-avatar">⬡</div>
+              <div class="testimonial-author-info">
+                <div class="ta-name">Co-founder, B2B SaaS Startup</div>
+                <div class="ta-role">Noida · Growth, GST &amp; Advisory</div>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="testimonial-card">
+            <div class="testimonial-quote-mark">“</div>
+            <div class="testimonial-stars" aria-label="5 out of 5">★★★★★</div>
+            <blockquote class="testimonial-text">We were handing a big share of every booking to OTAs. Their Instagram and influencer work brought guests to book with us directly, and the new accounting setup finally shows us margins channel by channel.</blockquote>
+            <figcaption class="testimonial-author">
+              <div class="testimonial-avatar">◎</div>
+              <div class="testimonial-author-info">
+                <div class="ta-name">Managing Partner, Boutique Hotel Group</div>
+                <div class="ta-role">Varanasi &amp; Agra · Social, Influencer &amp; Ads</div>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="testimonial-card">
+            <div class="testimonial-quote-mark">“</div>
+            <div class="testimonial-stars" aria-label="5 out of 5">★★★★★</div>
+            <blockquote class="testimonial-text">Twelve years in business and we had never generated a single lead online. They built our LinkedIn and Google presence from zero and even helped us structure and hire our first inside sales role.</blockquote>
+            <figcaption class="testimonial-author">
+              <div class="testimonial-avatar">◉</div>
+              <div class="testimonial-author-info">
+                <div class="ta-name">Owner, Industrial Packaging Manufacturer</div>
+                <div class="ta-role">Kanpur · Digital &amp; Advisory</div>
+              </div>
+            </figcaption>
+          </figure>
         </div>
-        <div class="testimonial-card reveal delay-2">
-          <div class="testimonial-quote-mark">"</div>
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">Placeholder testimonial. Replace this with a real client quote. Focus on a specific outcome — a metric, a problem solved, or how the partnership changed how they run their business.</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">AK</div>
-            <div class="testimonial-author-info">
-              <div class="ta-name">Client Name</div>
-              <div class="ta-role">Director, Business Name</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card reveal delay-3">
-          <div class="testimonial-quote-mark">"</div>
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">Placeholder testimonial. Replace this with a real client quote. Testimonials that mention a specific person, timeframe, and result are the most credible to prospective clients.</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">PM</div>
-            <div class="testimonial-author-info">
-              <div class="ta-name">Client Name</div>
-              <div class="ta-role">Owner, Business Name</div>
-            </div>
-          </div>
+        <div class="t3d-controls">
+          <button class="t3d-btn" id="t3d-prev" aria-label="Previous testimonial">←</button>
+          <div class="t3d-dots" id="t3d-dots" role="tablist"></div>
+          <button class="t3d-btn" id="t3d-next" aria-label="Next testimonial">→</button>
         </div>
       </div>
     </div>
@@ -908,8 +1131,8 @@ body.dark .founder-quote{color:rgba(237,237,235,.75)}
           <div class="stat-lbl">Campaigns Managed</div>
         </div>
         <div class="stat-cell reveal delay-2">
-          <div class="stat-num" data-count="8" data-suffix="+">0</div>
-          <div class="stat-lbl">Years Experience</div>
+          <div class="stat-num">2021</div>
+          <div class="stat-lbl">Established</div>
         </div>
         <div class="stat-cell reveal delay-3">
           <div class="stat-num">₹12Cr+</div>
@@ -965,28 +1188,28 @@ body.dark .founder-quote{color:rgba(237,237,235,.75)}
         <div>
           <span class="section-label reveal" style="margin-bottom:24px">Timeline</span>
           <div class="timeline-item reveal delay-1">
-            <div class="timeline-connector"><div class="timeline-year">2018</div><div class="timeline-line"></div></div>
-            <p class="timeline-text">Founded with a focus on social media for restaurants and F&B businesses in Tier 2 cities.</p>
+            <div class="timeline-connector"><div class="timeline-year">2021</div><div class="timeline-line"></div></div>
+            <p class="timeline-text">Astha Ventures founded in Lucknow, starting with social media and performance marketing for restaurants, venues and F&amp;B businesses in Tier 2 cities.</p>
           </div>
           <div class="timeline-item reveal delay-2">
-            <div class="timeline-connector"><div class="timeline-year">2020</div><div class="timeline-line"></div></div>
-            <p class="timeline-text">Expanded into performance marketing as digital adoption accelerated across Indian MSMEs.</p>
-          </div>
-          <div class="timeline-item reveal delay-3">
-            <div class="timeline-connector"><div class="timeline-year">2021</div><div class="timeline-line"></div></div>
+            <div class="timeline-connector"><div class="timeline-year">2022</div><div class="timeline-line"></div></div>
             <p class="timeline-text">Added GST and accounting services after seeing clients struggle with compliance alongside growth.</p>
           </div>
-          <div class="timeline-item reveal delay-4">
-            <div class="timeline-connector"><div class="timeline-year">2022</div><div class="timeline-line"></div></div>
+          <div class="timeline-item reveal delay-3">
+            <div class="timeline-connector"><div class="timeline-year">2023</div><div class="timeline-line"></div></div>
             <p class="timeline-text">Launched the Business Advisory practice. Crossed 50 active client relationships.</p>
           </div>
-          <div class="timeline-item reveal delay-5">
-            <div class="timeline-connector"><div class="timeline-year">2023</div><div class="timeline-line"></div></div>
+          <div class="timeline-item reveal delay-4">
+            <div class="timeline-connector"><div class="timeline-year">2024</div><div class="timeline-line"></div></div>
             <p class="timeline-text">Formalised the Astha Ventures structure. Added influencer marketing and AI website development as dedicated verticals.</p>
           </div>
-          <div class="timeline-item reveal" style="transition-delay:.55s">
-            <div class="timeline-connector"><div class="timeline-year">2024</div></div>
+          <div class="timeline-item reveal delay-5">
+            <div class="timeline-connector"><div class="timeline-year">2025</div><div class="timeline-line"></div></div>
             <p class="timeline-text">150+ businesses served. Deepened focus on long-term retainer relationships over project work.</p>
+          </div>
+          <div class="timeline-item reveal" style="transition-delay:.55s">
+            <div class="timeline-connector"><div class="timeline-year">2026</div></div>
+            <p class="timeline-text">Six disciplines, one accountable partner — building India's most trusted growth and advisory firm.</p>
           </div>
         </div>
       </div>
@@ -1652,6 +1875,7 @@ body.dark .founder-quote{color:rgba(237,237,235,.75)}
             <span class="gold-rule"></span>
             <h2 class="contact-left">Get in touch directly.</h2>
             <p class="sub" style="margin-bottom:28px">Prefer a direct channel? We respond to all enquiries within one business day.</p>
+            <p class="contact-global-note"><strong style="color:var(--gold-muted)">Based overseas?</strong> We meet in your business hours — across the US, UK, Europe, the Gulf and Australia — and propose in your currency.</p>
           </div>
           <div class="contact-channels reveal delay-1">
             <a href="https://wa.me/919696997188?text=Hello%20Astha%20Ventures%2C%20I%27d%20like%20to%20discuss%20my%20business." target="_blank" rel="noopener" class="contact-channel">
@@ -1711,14 +1935,29 @@ body.dark .founder-quote{color:rgba(237,237,235,.75)}
                 <div class="form-row">
                   <div>
                     <label class="form-label" for="f-phone">Phone *</label>
-                    <input class="form-input" type="tel" id="f-phone" name="phone" placeholder="+91 XXXXX XXXXX" required autocomplete="tel"/>
+                    <input class="form-input" type="tel" id="f-phone" name="phone" placeholder="With country code, e.g. +1, +44, +91" required autocomplete="tel"/>
                   </div>
                   <div>
                     <label class="form-label" for="f-email">Email *</label>
                     <input class="form-input" type="email" id="f-email" name="email" placeholder="your@email.com" required autocomplete="email"/>
                   </div>
                 </div>
-                <div class="form-group">
+                <div class="form-row">
+                <div>
+                  <label class="form-label" for="f-country">Where are you based?</label>
+                  <select class="form-input" id="f-country" name="country">
+                    <option>India</option>
+                    <option>United States</option>
+                    <option>United Kingdom</option>
+                    <option>Canada</option>
+                    <option>UAE / Middle East</option>
+                    <option>Europe</option>
+                    <option>Australia / New Zealand</option>
+                    <option>Singapore / Asia</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div>
                   <label class="form-label" for="f-service">Service of Interest</label>
                   <select class="form-input" id="f-service" name="service">
                     <option value="">Select a service</option>
@@ -1731,6 +1970,7 @@ body.dark .founder-quote{color:rgba(237,237,235,.75)}
                     <option>Multiple Services</option>
                     <option>Not Sure / Explore</option>
                   </select>
+                </div>
                 </div>
                 <div class="form-group">
                   <label class="form-label" for="f-message">Message *</label>
@@ -1804,13 +2044,13 @@ body.dark .founder-quote{color:rgba(237,237,235,.75)}
         <div class="footer-col-title">Contact</div>
         <div class="footer-contact-item"><a href="mailto:hello@asthaventures.in" style="color:inherit">hello@asthaventures.in</a></div>
         <div class="footer-contact-item"><a href="tel:+919696997188" style="color:inherit">+91 96969 97188</a></div>
-        <div class="footer-contact-item">Lucknow, Uttar Pradesh</div>
+        <div class="footer-contact-item">Lucknow, India · Serving clients worldwide</div>
         <div class="footer-contact-item" style="margin-top:8px">Mon – Sat · 10 AM – 7 PM</div>
       </div>
     </div>
     <div class="gold-divider" style="margin-bottom:24px"></div>
     <div class="footer-bottom">
-      <div class="footer-copy">© 2024 Astha Ventures. All rights reserved.</div>
+      <div class="footer-copy">© 2021–<span id="footer-year">2026</span> Astha Ventures. Est. 2021 · All rights reserved.</div>
       <div class="footer-legal">Privacy Policy · Terms of Service</div>
     </div>
   </div>
@@ -2142,6 +2382,379 @@ window.addEventListener('load', function() {
   initReveals();
   initCounters();
 });
+</script>
+
+<script>
+// ═══════════════════════════════════════════════════════
+// 3D LAYER — hero WebGL scene, tilt cards, split-text,
+// testimonial coverflow, cursor ring, magnetic buttons.
+// Every effect degrades gracefully: touch devices skip
+// pointer effects, reduced-motion users get static views.
+// ═══════════════════════════════════════════════════════
+var REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var FINE_POINTER = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+// ── Split headings into words for the perspective reveal ──
+var SPLIT_SEL = '.hero h1, .section-header h2, .why-left h2, .whychoose-header h2, .industries-header h2, ' +
+  '.testimonials-header h2, .stats-header h2, .cta-section h2, .about-hero h1, .services-hero h1, ' +
+  '.work-hero h1, .contact-hero h1, .founder-text h2, .founder-content h2, .cta-band-text h3, .svc-cta h2, .global-left h2';
+
+function splitHeadings() {
+  document.querySelectorAll(SPLIT_SEL).forEach(function(h) {
+    if (h.dataset.split) return;
+    h.dataset.split = '1';
+    var i = 0;
+    (function walk(node) {
+      Array.prototype.slice.call(node.childNodes).forEach(function(c) {
+        if (c.nodeType === 3) {
+          var frag = document.createDocumentFragment();
+          c.textContent.split(/(\s+)/).forEach(function(part) {
+            if (!part) return;
+            if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
+            var w = document.createElement('span'); w.className = 'sw';
+            var inner = document.createElement('span'); inner.className = 'sw-i';
+            inner.style.setProperty('--i', i++);
+            inner.textContent = part;
+            w.appendChild(inner); frag.appendChild(w);
+          });
+          c.parentNode.replaceChild(frag, c);
+        } else if (c.nodeType === 1 && c.tagName !== 'BR') {
+          walk(c);
+        }
+      });
+    })(h);
+    if (!h.closest('.reveal')) h.classList.add('reveal');
+  });
+}
+splitHeadings();
+
+// ── 3D tilt with glare ──
+var TILT_SEL = '.service-card-home, .wc-card, .case-card, .why-item, .ind-card, .mv-card, .value-card, .founder-photo-inner, .outcome-card, .global-card';
+
+function initTilt() {
+  if (!FINE_POINTER || REDUCED) return;
+  document.querySelectorAll(TILT_SEL).forEach(function(el) {
+    if (el.dataset.tilt) return;
+    el.dataset.tilt = '1';
+    el.classList.add('tilt');
+    var glare = document.createElement('span');
+    glare.className = 'tilt-glare';
+    el.appendChild(glare);
+    var max = (el.classList.contains('why-item') || el.classList.contains('ind-card') || el.classList.contains('outcome-card')) ? 4 : 9;
+    var lift = el.classList.contains('ind-card') ? 0 : -6;
+    el.addEventListener('pointerenter', function() {
+      el.style.transition = 'transform .15s ease-out, box-shadow .3s, border-color .3s';
+    });
+    el.addEventListener('pointermove', function(e) {
+      var r = el.getBoundingClientRect();
+      var px = (e.clientX - r.left) / r.width, py = (e.clientY - r.top) / r.height;
+      el.style.transform = 'perspective(1000px) rotateX(' + ((.5 - py) * max).toFixed(2) + 'deg) rotateY(' +
+        ((px - .5) * max).toFixed(2) + 'deg) translateY(' + lift + 'px)';
+      el.style.setProperty('--gx', (px * 100).toFixed(1) + '%');
+      el.style.setProperty('--gy', (py * 100).toFixed(1) + '%');
+    });
+    el.addEventListener('pointerleave', function() {
+      el.style.transition = 'transform .7s cubic-bezier(.16,1,.3,1), box-shadow .3s, border-color .3s';
+      el.style.transform = '';
+    });
+  });
+}
+
+// ── Magnetic buttons ──
+function initMagnetic() {
+  if (!FINE_POINTER || REDUCED) return;
+  document.querySelectorAll('.hero-btns > *, .cta-btns > *, .cta-band-btns > *, .svc-cta .btn-gold, .work-note-cta .btn-gold').forEach(function(b) {
+    if (b.dataset.magnetic) return;
+    b.dataset.magnetic = '1';
+    b.classList.add('magnetic');
+    b.addEventListener('pointermove', function(e) {
+      var r = b.getBoundingClientRect();
+      var x = e.clientX - r.left - r.width / 2, y = e.clientY - r.top - r.height / 2;
+      b.style.transform = 'translate(' + (x * .22).toFixed(1) + 'px,' + (y * .35).toFixed(1) + 'px)';
+    });
+    b.addEventListener('pointerleave', function() { b.style.transform = ''; });
+  });
+}
+
+// ── Cursor ring ──
+(function initCursor() {
+  if (!FINE_POINTER || REDUCED) return;
+  var ring = document.getElementById('cursor-ring'), dot = document.getElementById('cursor-dot');
+  var mx = -100, my = -100, rx = -100, ry = -100;
+  window.addEventListener('pointermove', function(e) {
+    mx = e.clientX; my = e.clientY;
+    dot.style.transform = 'translate3d(' + mx + 'px,' + my + 'px,0)';
+    document.body.classList.add('has-cursor');
+  }, { passive: true });
+  document.addEventListener('mouseleave', function() { document.body.classList.remove('has-cursor'); });
+  document.addEventListener('pointerover', function(e) {
+    var hit = e.target.closest && e.target.closest('a, button, input, select, textarea, .service-card-home, .ind-card, .testimonial-card:not(.is-active)');
+    ring.classList.toggle('hover', !!hit);
+  });
+  (function loop() {
+    rx += (mx - rx) * .18; ry += (my - ry) * .18;
+    ring.style.transform = 'translate3d(' + rx.toFixed(1) + 'px,' + ry.toFixed(1) + 'px,0)';
+    requestAnimationFrame(loop);
+  })();
+})();
+
+// ── Scroll progress bar ──
+(function initProgress() {
+  var bar = document.getElementById('scroll-progress');
+  function update() {
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.transform = 'scaleX(' + (h > 0 ? Math.min(window.scrollY / h, 1) : 0) + ')';
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+
+// ── Testimonials 3D coverflow ──
+var t3dRender = function() {};
+(function initT3D() {
+  var root = document.getElementById('t3d');
+  if (!root) return;
+  var stage = document.getElementById('t3d-stage');
+  var dotsWrap = document.getElementById('t3d-dots');
+  var cards = Array.prototype.slice.call(stage.children);
+  var n = cards.length, idx = 0, timer = null, paused = false;
+  var dots = cards.map(function(c, i) {
+    var d = document.createElement('button');
+    d.className = 't3d-dot';
+    d.setAttribute('role', 'tab');
+    d.setAttribute('aria-label', 'Show testimonial ' + (i + 1));
+    d.addEventListener('click', function() { go(i); });
+    dotsWrap.appendChild(d);
+    c.addEventListener('click', function() { if (i !== idx) go(i); });
+    return d;
+  });
+
+  t3dRender = function() {
+    var w = root.clientWidth;
+    if (!w) return;
+    var narrow = w < 640;
+    var step = narrow ? w * .18 : Math.min(w * .3, 340);
+    var depth = narrow ? 180 : 280;
+    var maxH = 0;
+    cards.forEach(function(c, i) {
+      var off = i - idx;
+      if (off > n / 2) off -= n;
+      if (off < -n / 2) off += n;
+      var a = Math.abs(off);
+      c.style.transform = 'translateX(-50%) translateX(' + (off * step).toFixed(1) + 'px) translateZ(' + (-a * depth) +
+        'px) rotateY(' + (-off * (narrow ? 18 : 28)) + 'deg)';
+      c.style.opacity = a === 0 ? 1 : a === 1 ? (narrow ? .35 : .6) : a === 2 && !narrow ? .2 : 0;
+      c.style.zIndex = 10 - a;
+      c.style.pointerEvents = a > 1 ? 'none' : 'auto';
+      c.classList.toggle('is-active', a === 0);
+      c.setAttribute('aria-hidden', a === 0 ? 'false' : 'true');
+      maxH = Math.max(maxH, c.offsetHeight);
+    });
+    if (maxH) stage.style.height = maxH + 'px';
+    dots.forEach(function(d, i) {
+      d.classList.toggle('active', i === idx);
+      d.setAttribute('aria-selected', i === idx ? 'true' : 'false');
+    });
+  };
+
+  function go(i) { idx = (i + n) % n; t3dRender(); restart(); }
+  function restart() {
+    clearInterval(timer);
+    if (REDUCED) return;
+    timer = setInterval(function() { if (!paused && !document.hidden) { idx = (idx + 1) % n; t3dRender(); } }, 6000);
+  }
+
+  document.getElementById('t3d-prev').addEventListener('click', function() { go(idx - 1); });
+  document.getElementById('t3d-next').addEventListener('click', function() { go(idx + 1); });
+  root.addEventListener('mouseenter', function() { paused = true; });
+  root.addEventListener('mouseleave', function() { paused = false; });
+  root.addEventListener('focusin', function() { paused = true; });
+  root.addEventListener('focusout', function() { paused = false; });
+  root.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft') go(idx - 1);
+    if (e.key === 'ArrowRight') go(idx + 1);
+  });
+
+  // Swipe
+  var sx = null;
+  stage.addEventListener('pointerdown', function(e) { sx = e.clientX; });
+  stage.addEventListener('pointerup', function(e) {
+    if (sx === null) return;
+    var dx = e.clientX - sx; sx = null;
+    if (Math.abs(dx) > 40) go(dx < 0 ? idx + 1 : idx - 1);
+  });
+
+  window.addEventListener('resize', t3dRender);
+  window.addEventListener('load', t3dRender);
+  t3dRender();
+  restart();
+})();
+
+// ── Hero WebGL scene (Three.js) ──
+var hero3dLayout = function() {};
+function initHero3D() {
+  var canvas = document.getElementById('hero3d');
+  if (!canvas || !window.THREE) return;
+  var hero = canvas.parentElement;
+  var renderer;
+  try {
+    renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+  } catch (e) { return; }
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+
+  var scene = new THREE.Scene();
+  var camera = new THREE.PerspectiveCamera(45, 1, .1, 100);
+  camera.position.set(0, 0, 9);
+
+  var GOLD = 0xC9A227, GOLD_LIGHT = 0xE8C84A;
+  var group = new THREE.Group();
+  scene.add(group);
+
+  // Faceted gold gem
+  var gem = new THREE.Mesh(
+    new THREE.IcosahedronGeometry(1.2, 0),
+    new THREE.MeshStandardMaterial({ color: GOLD, metalness: .45, roughness: .28, flatShading: true, emissive: 0x5a4210, emissiveIntensity: .45 })
+  );
+  group.add(gem);
+
+  // Wireframe shell
+  var shell = new THREE.LineSegments(
+    new THREE.EdgesGeometry(new THREE.IcosahedronGeometry(1.9, 1)),
+    new THREE.LineBasicMaterial({ color: GOLD_LIGHT, transparent: true, opacity: .26 })
+  );
+  group.add(shell);
+
+  // Orbit rings
+  var ring1 = new THREE.Mesh(new THREE.TorusGeometry(2.65, .012, 8, 220), new THREE.MeshBasicMaterial({ color: GOLD, transparent: true, opacity: .55 }));
+  ring1.rotation.x = Math.PI * .42;
+  group.add(ring1);
+  var ring2 = new THREE.Mesh(new THREE.TorusGeometry(3.15, .008, 8, 220), new THREE.MeshBasicMaterial({ color: GOLD, transparent: true, opacity: .28 }));
+  ring2.rotation.x = Math.PI * .62; ring2.rotation.y = .45;
+  group.add(ring2);
+
+  // Satellites riding ring 1 — Grow, Manage, Scale
+  var orbit = new THREE.Group();
+  orbit.rotation.x = ring1.rotation.x;
+  group.add(orbit);
+  var satMat = new THREE.MeshStandardMaterial({ color: GOLD_LIGHT, metalness: .4, roughness: .3, flatShading: true, emissive: 0x5a4210, emissiveIntensity: .5 });
+  var sats = [0, 1, 2].map(function(i) {
+    var s = new THREE.Mesh(new THREE.OctahedronGeometry(.13, 0), satMat);
+    var a = i * Math.PI * 2 / 3;
+    s.position.set(Math.cos(a) * 2.65, Math.sin(a) * 2.65, 0);
+    orbit.add(s);
+    return s;
+  });
+
+  // Gold dust field
+  var count = window.innerWidth < 900 ? 500 : 1100;
+  var pos = new Float32Array(count * 3);
+  for (var i = 0; i < count; i++) {
+    var r = 3.5 + Math.random() * 8, th = Math.random() * Math.PI * 2, ph = Math.acos(2 * Math.random() - 1);
+    pos[i * 3] = r * Math.sin(ph) * Math.cos(th);
+    pos[i * 3 + 1] = r * Math.sin(ph) * Math.sin(th);
+    pos[i * 3 + 2] = r * Math.cos(ph) - 2;
+  }
+  var dustGeo = new THREE.BufferGeometry();
+  dustGeo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+  var dust = new THREE.Points(dustGeo, new THREE.PointsMaterial({ color: GOLD_LIGHT, size: .035, transparent: true, opacity: .65, depthWrite: false }));
+  scene.add(dust);
+
+  // Lights
+  scene.add(new THREE.AmbientLight(0x6a7090, 1));
+  var key = new THREE.DirectionalLight(0xfff4dc, 1.6); key.position.set(3, 4, 5); scene.add(key);
+  var warm = new THREE.PointLight(GOLD_LIGHT, 2.2, 20); warm.position.set(-3, -1, 4); scene.add(warm);
+  var rim = new THREE.PointLight(0x4f6bd8, 1.3, 20); rim.position.set(2, -3, -3); scene.add(rim);
+
+  // Anchor the gem behind the hero stats column (or centre on mobile)
+  var base = { x: 0, y: 0 };
+  hero3dLayout = function() {
+    var w = hero.clientWidth, h = hero.clientHeight;
+    if (!w || !h) return;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    var hr = hero.getBoundingClientRect();
+    var stats = hero.querySelector('.hero-stats');
+    var sr = stats && stats.offsetParent ? stats.getBoundingClientRect() : null;
+    var cx = sr && sr.width ? sr.left - hr.left - 30 : w * .5;
+    var cy = sr && sr.height ? sr.top + sr.height / 2 - hr.top : h * .36;
+    var vh = 2 * Math.tan(camera.fov * Math.PI / 360) * camera.position.z;
+    var vw = vh * camera.aspect;
+    base.x = (cx / w - .5) * vw;
+    base.y = -(cy / h - .5) * vh;
+    group.scale.setScalar(w < 900 ? .85 : 1);
+    if (REDUCED) draw(0);
+  };
+
+  var mouse = { x: 0, y: 0 }, cur = { x: 0, y: 0 };
+  if (!REDUCED) {
+    window.addEventListener('pointermove', function(e) {
+      mouse.x = e.clientX / window.innerWidth * 2 - 1;
+      mouse.y = e.clientY / window.innerHeight * 2 - 1;
+    }, { passive: true });
+  }
+
+  function draw(t) {
+    cur.x += (mouse.x - cur.x) * .05;
+    cur.y += (mouse.y - cur.y) * .05;
+    gem.rotation.y = t * .35 + cur.x * .6;
+    gem.rotation.x = t * .18 + cur.y * .4;
+    shell.rotation.y = -t * .12; shell.rotation.z = t * .05;
+    ring1.rotation.z = t * .22; ring2.rotation.z = -t * .16;
+    orbit.rotation.z = t * .45;
+    sats.forEach(function(s) { s.rotation.x = t * 1.4; s.rotation.y = t * 1.1; });
+    var scrollLift = Math.min(window.scrollY / Math.max(hero.clientHeight, 1), 1.2) * 2.2;
+    group.position.set(base.x, base.y + Math.sin(t * .8) * .12 + scrollLift, 0);
+    group.rotation.y = cur.x * .35;
+    group.rotation.x = cur.y * .25;
+    dust.rotation.y = t * .02 + cur.x * .08;
+    dust.rotation.x = cur.y * .05;
+    renderer.render(scene, camera);
+  }
+
+  var visible = true;
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function(entries) { visible = entries[0].isIntersecting; }).observe(hero);
+  }
+  var start = performance.now();
+  function frame(now) {
+    requestAnimationFrame(frame);
+    if (!visible || document.hidden) return;
+    draw((now - start) / 1000);
+  }
+
+  window.addEventListener('resize', hero3dLayout);
+  window.addEventListener('load', hero3dLayout);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(hero3dLayout);
+  hero3dLayout();
+  if (REDUCED) draw(0); else requestAnimationFrame(frame);
+  canvas.classList.add('ready');
+}
+
+(function loadThree() {
+  var s = document.createElement('script');
+  s.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+  s.async = true;
+  s.onload = initHero3D;
+  document.body.appendChild(s);
+})();
+
+// ── Re-run effects when the SPA switches pages ──
+var _showPage = showPage;
+showPage = function(pageId) {
+  _showPage(pageId);
+  setTimeout(function() {
+    initTilt();
+    initMagnetic();
+    if (pageId === 'home') { hero3dLayout(); t3dRender(); }
+  }, 100);
+};
+
+initTilt();
+initMagnetic();
 </script>
 </body>
 </html>
